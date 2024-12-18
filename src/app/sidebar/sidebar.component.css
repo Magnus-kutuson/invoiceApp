@@ -16,12 +16,27 @@
     z-index: 1000; 
     transition: all 0.3s ease; 
  }
-
+ .sidebar-inner {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    align-items: center; 
+    height: 100%; 
+    padding: 1rem; 
+ }
+ 
  .logo {
-    background: url('../../assets/images/logo.svg')center center /cover no-repeat;
+    background: url('../../assets/images/logo.svg') center center / cover no-repeat;
     width: 100px;
     height: 100px;
  }
+ 
+ .sidebar-items {
+    background: url('../../assets/images/Oval.png') center center / cover no-repeat;
+    width: 40px;
+    height: 40px;
+ }
+ 
 
  @media (max-width: 768px) {
     .sidebar {
