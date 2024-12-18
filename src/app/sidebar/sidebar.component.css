@@ -1,0 +1,10 @@
+.sidebar{
+    width: 103px;
+    height: 100vh;
+    background-color: #373B53;
+    border-radius: 0 1.5rem 1.5rem 0;
+}
+
+/* .logo{
+    background: url('../../assets/images/logo.svg');
+} */
