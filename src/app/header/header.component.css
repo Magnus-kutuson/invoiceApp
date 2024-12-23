@@ -1,0 +1,20 @@
+.header-content{
+    width: 730px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 2px solid green; */
+    margin-top: 6rem;
+}
+.invoice-btn{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 150px;
+    height: 48px;
+    border: none;
+    border-radius: 50px;
+    background-color: #7C5DFA;
+    color: #fff;
+}
