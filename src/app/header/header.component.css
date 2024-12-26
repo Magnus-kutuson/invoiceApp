@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* border: 2px solid green; */
+    border: 2px solid green;
     margin-top: 6rem;
 }
 .invoice-btn{
@@ -18,3 +18,35 @@
     background-color: #7C5DFA;
     color: #fff;
 }
+.sub-header{
+    /* width: 100%; */
+    /* border: 3px solid red; */
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+select{
+   border: none;
+   background: none;
+}
+
+option{
+    border: none;
+}
+@media (max-width:640px) {
+    .header-content{
+        margin-top: 2rem;
+        width: 327px;
+        height: 100%;
+    }
+    
+}
+/* @media (max-width:1023px) {
+    .header-content{
+        margin-top: 2rem;
+        width: 672px;
+        height: 100%;
+       margin-left: 5rem;
+    }
+    
+} */
