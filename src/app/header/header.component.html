@@ -5,13 +5,7 @@
             <p>There are 4 pending invoices</p>
         </div>
         <div class="sub-header">
-                <select name="" id="" >
-                    filter by status
-                    <option value="" *ngFor="let filter of filters">
-                        <input type="checkbox">
-                        {{filter.title}}
-                    </option>
-                </select>
+               <app-badge></app-badge>
             <button class="invoice-btn">
                 <img src="../../assets/images/plus-btn.png">
                 New Invoice

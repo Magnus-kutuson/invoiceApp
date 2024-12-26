@@ -9,3 +9,19 @@
 body{
     background-color: #E5E5E5;
 }
+
+/* General Styles */
+body {
+    margin: 0;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transitions */
+  }
+  
+  body.light-mode {
+    background-color: white;
+    color: black;
+  }
+  
+  body.dark-mode {
+    background-color: black;
+    color: white;
+  }

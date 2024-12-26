@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid green;
+    /* border: 2px solid green; */
     margin-top: 6rem;
 }
 .invoice-btn{
@@ -25,14 +25,7 @@
     gap: 3rem;
     align-items: center;
 }
-select{
-   border: none;
-   background: none;
-}
 
-option{
-    border: none;
-}
 @media (max-width:640px) {
     .header-content{
         margin-top: 2rem;

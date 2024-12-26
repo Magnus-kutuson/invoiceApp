@@ -1,11 +1,17 @@
-.switcher {
-    background: url('../../assets/images/moon-icon.svg') no-repeat center;
-    width: 20px;
-    height: 20px;
-    transition: background-color 0.3s ease; /* Smooth transition */
+
+ 
+ /* Switcher Styles */
+ .switcher {
+   width: 20px;
+   height: 20px;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
  }
  
- .switcher:hover {
-    filter: hue-rotate(600deg);
+ .theme-icon {
+   width: 100%;
+   height: auto;
  }
  
