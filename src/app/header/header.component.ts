@@ -16,4 +16,14 @@ export class HeaderComponent {
     {id: '3', title:'Paid'},
   ]
 
+  selectedFilter = this.filters[0]; 
+
+  onFilterChange(event: any) {
+    console.log(event);
+  } 
+
+  onCheckboxChange(filter: any) {
+    console.log(filter);
+  }
+
 }
