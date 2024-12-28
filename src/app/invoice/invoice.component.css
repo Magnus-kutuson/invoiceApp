@@ -1,0 +1,51 @@
+.invoice-card{
+    width: 730px;
+    height: 72px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 4px 4px #48549F1A;
+    /* border: 2px solid #48549F1A; */
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+}
+.id{
+    font-size: 14px;
+    font-weight: 700;
+}
+.id span{
+  color: var(--color-soft-blue);
+}
+.due{
+  color: var(--color-muted-blue);
+}
+.name{
+  color: var(--color-muted-blue);
+}
+.amount{
+  font-size: 16px;
+  font-weight: 700;
+}
+.status{
+ width: 104px;
+ height: 40px;
+ border: 1px solid #FF9797;
+ color: tomato;
+}
+.card-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 24px;
+} 
+.light-mode .invoice-card{
+    background-color: white;
+    color: black;
+  }
+  
+.dark-mode .invoice-card {
+    background-color: #252945;
+    color: white;
+  }

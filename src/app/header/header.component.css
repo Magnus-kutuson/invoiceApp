@@ -6,6 +6,7 @@
     align-items: center;
     /* border: 2px solid green; */
     margin-top: 6rem;
+    /* margin-left: 20rem; */
 }
 .invoice-btn{
     display: flex;
@@ -17,6 +18,9 @@
     border-radius: 50px;
     background-color: #7C5DFA;
     color: #fff;
+}
+.invoice-btn:hover{
+    background-color: #9277FF;
 }
 .sub-header{
     /* width: 100%; */
