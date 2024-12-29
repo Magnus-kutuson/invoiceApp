@@ -9,6 +9,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 1rem;
+    cursor: pointer;
 }
 .id{
     font-size: 14px;
@@ -27,12 +28,50 @@
   font-size: 16px;
   font-weight: 700;
 }
-.status{
+.status-container{
  width: 104px;
  height: 40px;
- border: 1px solid #FF9797;
- color: tomato;
+ border: 1px solid #071fd6;
+ display: flex;
+ justify-content: center;
+  align-items: center;
+
 }
+/* Base styling for the status-circle */
+.status-circle {
+  width: 10px; /* Adjust size as needed */
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+/* Styling for the status-circle when paid */
+.status-circle--paid {
+  background-color: #33D69F;
+  color: green;
+}
+
+/* Styling for the status-circle when pending */
+.status-circle--pending {
+  background-color: #FF9797;
+  color: #EC5757;
+}
+
+/* Styling for the status-circle when draft */
+.status-circle--draft {
+  background-color: #DFE3FA;
+  color: #373B53;
+}
+
+/* Status text styling */
+/* .status {
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 8px;
+  vertical-align: middle;
+} */
+
 .card-content{
     display: flex;
     justify-content: space-between;

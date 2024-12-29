@@ -4,6 +4,16 @@
        <p class="due">{{dataList.paymentDue}}</p>
        <p class="name">{{dataList.clientName}}</p>
        <p class="amount">£{{dataList.total}}</p>
-       <p class="status">{{dataList.status}}</p>
-    </div>
+       <div class="status-container">
+        <div class="status-circle"
+        [ngClass]="{
+          'status-circle--paid': dataList.status === 'paid',
+          'status-circle--pending': dataList.status === 'pending',
+          'status-circle--draft': dataList.status === 'draft'
+        }"
+      >
+      <p class="status">{{ dataList.status }}</p>
+      </div>
+       </div>
+</div>
 </div>

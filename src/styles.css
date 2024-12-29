@@ -40,11 +40,13 @@ body {
     margin: 0;
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transitions */
   }
-  [data-theme="light"] {
-    --background-color: var(--color-almost-white);
-    --text-color: var(--color-very-dark);
+  
+  body.light-mode {
+    background-color: white;
+    color: black;
   }
-  [data-theme="dark"] {
-    --background-color: var(--color-midnight-gray);
-    --text-color: var(--color-white);
+  
+  body.dark-mode {
+    background-color: #141625;
+    color: white;
   }
