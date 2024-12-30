@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HeadlineComponent } from '../headline/headline.component';
 
 
 
 @Component({
   selector: 'app-filter',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, HeadlineComponent],
   templateUrl: './filter.component.html',
   styleUrl: './filter.component.css',
 })

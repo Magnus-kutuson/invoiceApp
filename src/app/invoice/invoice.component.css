@@ -35,50 +35,21 @@
   font-size: 16px;
   font-weight: 700;
 }
-.status-container{
- width: 104px;
- height: 40px;
- border: 1px solid #071fd6;
- display: flex;
- justify-content: center;
-  align-items: center;
-
+.empty-state {
+  text-align: center;
+  margin-top: 50px;
+  /* color: #7e7e7e; */
 }
-/* Base styling for the status-circle */
-.status-circle {
-  width: 10px; /* Adjust size as needed */
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 1rem;
+img{
+   margin-bottom: 3rem;
 }
-
-/* Styling for the status-circle when paid */
-.status-circle--paid {
-  background-color: #33D69F;
-  color: green;
+.headline-H2{
+  margin-bottom: 2rem;
 }
-
-/* Styling for the status-circle when pending */
-.status-circle--pending {
-  background-color: #FF9797;
-  color: #EC5757;
+.text{
+  /* margin-top: 2rem; */
+  color: var(--color-muted-blue);
 }
-
-/* Styling for the status-circle when draft */
-.status-circle--draft {
-  background-color: #DFE3FA;
-  color: #373B53;
-}
-
-/* Status text styling */
-/* .status {
-  font-weight: bold;
-  display: inline-block;
-  margin-left: 8px;
-  vertical-align: middle;
-} */
-
 .card-content{
     display: flex;
     justify-content: space-between;

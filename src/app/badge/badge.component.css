@@ -11,18 +11,18 @@
 }
 
 .paid {
-  background-color: var(--paid-bg);
-  color: var(--paid);
+  background-color: #33d6a02e;
+  color: var(--color-mint-green);
 }
 
 .draft {
-  background-color: var(--draft-bg);
-  color: var(--draft);
+  background-color: #373b532e;
+  color: var(--color-dark-grey);
 }
 
 .pending {
-  background-color: var(--pending-bg);
-  color: var(--pending);
+  background-color: #ff910017;;
+  color: var(--color-amber);
 }
 
 .dot {

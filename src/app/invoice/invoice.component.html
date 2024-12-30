@@ -1,23 +1,24 @@
-
 <div class="header">
   <app-header></app-header>
-<div class="invoice-card" *ngFor="let dataList of data">
-    <div class="card-content">
-       <p class="id"><span>#</span>{{dataList.id}}</p>
-       <p class="due">{{dataList.paymentDue}}</p>
-       <p class="name">{{dataList.clientName}}</p>
-       <p class="amount">£{{dataList.total}}</p>
-       <div class="status-container">
-        <div class="status-circle"
-        [ngClass]="{
-          'status-circle--paid': dataList.status === 'paid',
-          'status-circle--pending': dataList.status === 'pending',
-          'status-circle--draft': dataList.status === 'draft'
-        }"
-      >
-      <p class="status">{{ dataList.status }}</p>
+  <ng-container *ngIf="data.length > 0; else emptyState">
+    <div class="invoice-card" *ngFor="let dataList of data">
+      <div class="card-content">
+        <p class="id"><span>#</span>{{ dataList.id }}</p>
+        <p class="due">{{ dataList.paymentDue }}</p>
+        <p class="name">{{ dataList.clientName }}</p>
+        <p class="amount">£{{ dataList.total }}</p>
+        <app-badge [status]="dataList.status">{{ dataList.status }}</app-badge>
       </div>
-       </div>
+    </div>
+  </ng-container>
 </div>
-</div>
+<ng-template #emptyState>
+  <div class="empty-state">
+    <img
+      src="../../assets/images/Email campaign_Flatline.svg"
+      alt="Empty state illustration"
+    />
+    <app-headline type="H2" >There is nothing here</app-headline>
+    <app-text type="Body1" class="text">create an invoice by clicking the <br><span>New Invoice</span> button and get started</app-text>
   </div>
+</ng-template>

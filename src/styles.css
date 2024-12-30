@@ -18,10 +18,6 @@
   --color-white: #FFFFFF;
   --color-error: #EC5757;
   --color-error-light: #FF9797;
-  /* --breakpoint-tablet: 768px;
-  --breakpoint-small-desktop: 992px;
-  --breakpoint-desktop: 1200px;
-  --breakpoint-large-desktop: 1440px; */
 }
 
 *{
@@ -35,10 +31,9 @@ body{
     background-color: #E5E5E5;
 }
 
-/* General Styles */
 body {
     margin: 0;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transitions */
+    transition: background-color 0.3s ease, color 0.3s ease; 
   }
   
   body.light-mode {
