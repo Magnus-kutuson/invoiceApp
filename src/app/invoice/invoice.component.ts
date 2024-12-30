@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from '../data.service';
-// import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from '../header/header.component';
 
 
 @Component({
   selector: 'app-invoice',
   standalone: true,
-  imports: [HttpClientModule, CommonModule], 
+  imports: [HttpClientModule, CommonModule, HeaderComponent], 
   templateUrl: './invoice.component.html',
   styleUrls: ['./invoice.component.css'],
 })

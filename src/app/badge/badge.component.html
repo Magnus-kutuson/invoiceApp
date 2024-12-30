@@ -1,17 +1,24 @@
-<div class="custom-dropdown">
-    <button (click)="toggleDropdown()">
-        Filter by status
-      <span class="arrow-down">▼</span>
-    </button>
-    <div class="dropdown-content" *ngIf="dropdownOpen">
-      <div *ngFor="let filter of filters">
-        <label>
-          <input type="checkbox" [(ngModel)]="filter.selected" />
-          {{ filter.title }}
-        </label>
-      </div>
-    </div>
-  </div>
+<span
+  class="badge"
+  [ngClass]="{
+    paid: status === 'paid',
+    pending: status === 'pending',
+    draft: status === 'draft'
+  }"
+>
+  <span
+    class="dot"
+    [ngStyle]="{
+      backgroundColor:
+        status === 'paid'
+          ? 'var(--paid)'
+          : status === 'pending'
+          ? 'var(--pending)'
+          : 'var(--draft)'
+    }"
+  ></span>
+  <ng-content></ng-content>
+</span>
   
   
   

@@ -1,47 +1,33 @@
-.custom-dropdown {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-  }
-  
-  .dropdown-content {
-    display: block;
-    position: absolute;
-    background-color: white;
-    border: 1px solid #ccc;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
-  
-  .dropdown-content label {
-    display: block;
-    padding: 5px 0;
-  }
+.badge {
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  width: 10rem;
+  text-align: center;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
 
-  .selected-filters {
-    margin-top: 10px;
-    font-size: 14px;
-  }
-  
-  .selected-filters ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-  }  
-  .custom-dropdown button {
-    background: transparent;
-    border: none;
-    padding: 8px 12px;
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .arrow-down {
-    margin-left: 8px;
-    font-size: 12px;
-  }
-  
+.paid {
+  background-color: var(--paid-bg);
+  color: var(--paid);
+}
+
+.draft {
+  background-color: var(--draft-bg);
+  color: var(--draft);
+}
+
+.pending {
+  background-color: var(--pending-bg);
+  color: var(--pending);
+}
+
+.dot {
+  height: 0.8rem;
+  width: 0.8rem;
+  border-radius: 50%;
+  margin-right: 0.6rem;
+}
