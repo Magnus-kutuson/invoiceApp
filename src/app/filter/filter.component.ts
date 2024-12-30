@@ -5,6 +5,7 @@ import { HeadlineComponent } from '../headline/headline.component';
 
 
 
+
 @Component({
   selector: 'app-filter',
   standalone: true,
@@ -15,17 +16,37 @@ import { HeadlineComponent } from '../headline/headline.component';
 export class FilterComponent {
   dropdownOpen = false;
 
-  filters = [
-    { id: '1', title: 'Draft', selected: false },
-    { id: '2', title: 'Pending', selected: false },
-    { id: '3', title: 'Paid', selected: false },
+  items = [
+    { status: 'paid' },
+    { status: 'pending' },
+    { status: 'draft' },
+    { status: 'paid' },
   ];
+
+  filters = [
+    { id: '1', title: 'Paid', value: 'paid', selected: false },
+    { id: '2', title: 'Pending', value: 'pending', selected: false },
+    { id: '3', title: 'Draft', value: 'draft', selected: false },
+  ];
+  invoices: any;
 
   toggleDropdown() {
     this.dropdownOpen = !this.dropdownOpen;
   }
 
   getSelectedFilters() {
-    return this.filters.filter((filter) => filter.selected);
+    return this.filters
+      .filter((filter) => filter.selected)
+      .map((filter) => filter.value);
+  }
+
+  get filteredItems() {
+    const activeFilters = this.getSelectedFilters();
+
+    if (activeFilters.length === 0) {
+      return this.items;
+    }
+
+    return this.items.filter((item) => activeFilters.includes(item.status));
   }
 }
