@@ -18,6 +18,7 @@
   --color-white: #FFFFFF;
   --color-error: #EC5757;
   --color-error-light: #FF9797;
+  --color-default: #ccc;
 }
 
 *{
