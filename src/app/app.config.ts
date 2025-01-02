@@ -7,7 +7,8 @@ import { provideState, provideStore } from '@ngrx/store';
 import { invoiceFeature } from './Stores/reducer';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideEffects } from '@ngrx/effects';
+import { InvoiceEffects } from './Stores/effects';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideHttpClient(), provideStore(), provideState(invoiceFeature), provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }), provideEffects()],
+  providers: [provideRouter(routes), provideHttpClient(), provideStore(), provideState(invoiceFeature), provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }), provideEffects(InvoiceEffects),],
 };

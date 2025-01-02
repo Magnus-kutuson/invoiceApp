@@ -1,7 +1,7 @@
 .invoice-card{
     width: 730px;
     height: 72px;
-    background-color: #FFFFFF;
+    background-color: var(--color-white);
     box-shadow: 0px 0px 4px 4px #48549F1A;
     /* border: 2px solid #48549F1A; */
     border-radius: 8px;
@@ -21,6 +21,7 @@
 .id{
     font-size: 14px;
     font-weight: 700;
+    color: var(--color-very-dark);
 }
 .id span{
   color: var(--color-soft-blue);
@@ -34,13 +35,14 @@
 .amount{
   font-size: 16px;
   font-weight: 700;
+  color: var(--color-very-dark);
 }
 .empty-state {
   text-align: center;
   margin-top: 50px;
   /* color: #7e7e7e; */
 }
-img{
+.empty-state-image{
    margin-bottom: 3rem;
 }
 .headline-H2{
@@ -56,13 +58,7 @@ img{
     align-items: center;
     width: 100%;
     padding: 0 24px;
-} 
-.light-mode .invoice-card{
-    background-color: white;
-    color: black;
-  }
-  
-.dark-mode .invoice-card {
-    background-color: #252945;
-    color: white;
-  }
+}
+.invoice-card:hover{
+    border: 2px solid var(--color-primary-blue);
+}

@@ -1,20 +1,21 @@
 <div class="header">
   <app-header></app-header>
-  <ng-container *ngIf="data.length > 0; else emptyState">
-    <div class="invoice-card" *ngFor="let dataList of data">
+  <ng-container *ngIf="data().length > 0; else emptyState">
+    <div class="invoice-card" *ngFor="let dataList of data()">
       <div class="card-content">
         <p class="id"><span>#</span>{{ dataList.id }}</p>
         <p class="due">{{ dataList.paymentDue }}</p>
         <p class="name">{{ dataList.clientName }}</p>
         <p class="amount">£{{ dataList.total }}</p>
         <app-badge [status]="dataList.status">{{ dataList.status }}</app-badge>
+          <img src="../../assets/images/arrow-right.svg" alt="arrow-right">
       </div>
     </div>
   </ng-container>
 </div>
 <ng-template #emptyState>
   <div class="empty-state">
-    <img
+    <img class="empty-state-image"
       src="../../assets/images/Email campaign_Flatline.svg"
       alt="Empty state illustration"
     />

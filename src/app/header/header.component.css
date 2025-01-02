@@ -17,11 +17,11 @@
     height: 48px;
     border: none;
     border-radius: 50px;
-    background-color: #7C5DFA;
+    background-color: var(--color-primary-blue);
     color: #fff;
 }
 .invoice-btn:hover{
-    background-color: #9277FF;
+    background-color: var(--color-secondary-blue);
 }
 .sub-header{
     /* width: 100%; */
@@ -29,6 +29,9 @@
     display: flex;
     gap: 3rem;
     align-items: center;
+}
+.invoice-header{
+    color: var(--color-very-dark);
 }
 
 @media (max-width:640px) {

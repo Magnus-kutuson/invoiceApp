@@ -7,7 +7,7 @@
   .dropdown-content {
     display: block;
     position: absolute;
-    background-color: white;
+    background-color: var(--color-white);
     border: none;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -23,12 +23,19 @@
     margin-top: 10px;
     font-size: 14px;
   }
+  input[type='checkbox']{
+    color: var(--color-white);
+  }
   
   .selected-filters ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
+    accent-color: var(--color-primary-blue);
   }  
+  .filter{
+    color: var(--color-very-dark);
+  }
   .custom-dropdown button {
     background: transparent;
     border: none;

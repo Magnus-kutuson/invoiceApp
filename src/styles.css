@@ -20,6 +20,11 @@
   --color-error-light: #FF9797;
   --color-default: #ccc;
 }
+.dark-mode {
+--color-almost-white: #252945;
+--color-white: #1E2139;
+--color-very-dark: #F8F8FB;
+}
 
 *{
     margin: 0;
@@ -29,20 +34,11 @@
 }
 
 body{
-    background-color: #E5E5E5;
+    background-color: var(--color-almost-white);
 }
 
 body {
     margin: 0;
     transition: background-color 0.3s ease, color 0.3s ease; 
   }
-  
-  body.light-mode {
-    background-color: white;
-    color: black;
-  }
-  
-  body.dark-mode {
-    background-color: #141625;
-    color: white;
-  }
+ 

@@ -20,3 +20,5 @@ export const invoiceFeature = createFeature({
         }))
     )
 })
+
+export const {selectError, selectLoading, selectInvoices} = invoiceFeature;
