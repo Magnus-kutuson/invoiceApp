@@ -1,97 +1,75 @@
-<form action="#" >
-    <div class="form-group">
-         <div class="header">
-        <app-headline type="H1">New Invoice</app-headline>
-     </div>
-     <div class="form-bill-from">
-        <div class="form-bill">
-        <app-headline type="H4">Bill From</app-headline>
-     </div>
-     <div class="forms">
-        <div class="form-text">
-            <app-text type="Body1">Street Address</app-text>
-        </div>
-            <input type="text" class="form-input">
-        </div>
-        <div class="sub-form">
-             <div class="forms">
-        <div class="form-text">
-            <app-text type="Body1">City</app-text>
-        </div>
-            <input type="text" class="form-mini">
-        </div>
-     <div class="forms">
-        <div class="form-text">
-            <app-text type="Body1">Post Code</app-text>
-        </div>
-            <input type="text" class="form-mini">
-        </div>
-     <div class="forms">
-        <div class="form-text">
-            <app-text type="Body1">Country</app-text>
-        </div>
-            <input type="text" class="form-mini">
-        </div>
+<form action="#" class="form" [formGroup]="myForm">
+  <div  class="main-title">
+    <app-headline type="H1">New Invoice</app-headline>
+  </div>
+  <div class="Bill">
+   <app-headline type="H4" class="bills">Bill From</app-headline>
+    <div class="Bill__group">
+     <app-text type="Body1" class="form-text">Street Address</app-text>
+     <input type="text" class="form-input" formControlName="address" />
+   </div>
+   <div class="forms">
+    <div class="Bill__group">
+      <app-text type="Body1" class="form-text">City</app-text>
+      <input type="text" class="mini-input" formControlName="city" />
     </div>
-    <div>
-        <div class="form-to">
-            <app-headline type="H4">Bill To</app-headline>
-        </div>
-        <div class="forms">
-        <div class="form-text">
-            <app-text type="Body1">Client's Name</app-text>
-        </div>
-            <input type="text" class="form-input">
-        </div>
-        <div class="forms">
-        <div class="form-text">
-            <app-text type="Body1">Client's Email</app-text>
-        </div>
-            <input type="text" class="form-input">
-        </div>
-        <div class="forms">
-        <div class="form-text">
-            <app-text type="Body1">Street Address</app-text>
-        </div>
-            <input type="text" class="form-input">
-        </div>
-        <div class="sub-form">
-             <div class="forms">
-        <div class="form-text">
-            <app-text type="Body1">City</app-text>
-        </div>
-            <input type="text" class="form-mini">
-        </div>
-     <div class="forms">
-        <div class="form-text">
-            <app-text type="Body1">Post Code</app-text>
-        </div>
-            <input type="text" class="form-mini">
-        </div>
-     <div class="forms">
-        <div class="form-text">
-            <app-text type="Body1">Country</app-text>
-        </div>
-            <input type="text" class="form-mini">
-        </div>
-     </div>
-     <div class="forms-terms">
-        <div class="form-text">
-            <app-text type="Body1">Invoice Date</app-text>
-         </div>
-            <input type="date" class="calender">
-         <div class="form-text">
-            <app-text type="Body1">Payment Terms</app-text>
-         </div>
-            <select name="" id="" class="form-select">
-                <option value="" *ngFor="let item of items">{{item.title}}</option>
-            </select>
-            <div>
-            <div class="form-text">
-            <app-text type="Body1">Project Description</app-text>
-            </div>
-            <input type="text" class="form-input">
-            </div>
-     </div>
+    <div class="Bill__group">
+      <app-text type="Body1" class="form-text">Post Code</app-text>
+      <input type="text" class="mini-input" formControlName="postCode" />
     </div>
-</div>
+    <div class="Bill__group">
+      <app-text type="Body1" class="form-text">Country</app-text>
+      <input type="text" class="mini-input" formControlName="country" />
+    </div>
+   </div>
+  </div>
+  <div class="Bill">
+    <app-headline type="H4" class="bills">Bill To</app-headline>
+    <div class="Bill__group">
+      <app-text type="Body1" class="form-text">Client's Name</app-text>
+      <input type="text" class="form-input" formControlName="name" />
+    </div>
+    <div class="Bill__group">
+      <app-text type="Body1" class="form-text">Client's Email</app-text>
+      <input type="text" class="form-input" formControlName="email" />
+    </div>
+    <div class="Bill__group">
+      <app-text type="Body1" class="form-text">Street Address</app-text>
+      <input type="text" class="form-input" formControlName="address" />
+    </div>
+    <div class="forms">
+    <div class="Bill__group">
+      <app-text type="Body1" class="form-text">City</app-text>
+      <input type="text" class="mini-input" formControlName="city" />
+    </div>
+    <div class="Bill__group">
+      <app-text type="Body1" class="form-text">Post Code</app-text>
+      <input type="text" class="mini-input" formControlName="postCode" />
+    </div>
+    <div class="Bill__group">
+      <app-text type="Body1" class="form-text">Country</app-text>
+      <input type="text" class="mini-input" formControlName="country" />
+    </div>
+   </div>
+   <div class="Bill">
+   <div class="option">
+     <div class="Bill__group">
+      <app-text type="Body1" class="form-text">Invoice Date</app-text>
+      <input type="date" class="sub-input" formControlName="date" />
+    </div>
+    <div class="Bill__group">
+      <app-text type="Body1" class="form-text">Payment Terms</app-text>
+      <select name="" id=""  class="sub-input" formControlName="terms">
+        <option value="" *ngFor="let item of items">{{item.title}}</option>
+      </select>
+    </div>
+   </div>
+    <div class="Bill__group">
+      <app-text type="Body1" class="form-text">Project Description</app-text>
+      <input type="text" class="form-input" formControlName="description" />
+    </div>
+   </div>
+  </div>
+  
+ 
+</form>

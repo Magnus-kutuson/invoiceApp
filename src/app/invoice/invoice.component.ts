@@ -10,6 +10,7 @@ import { Store } from '@ngrx/store';
 import { invoiceActions } from '../Stores/actions';
 import { selectError, selectInvoices, selectLoading } from '../Stores/reducer';
 import { ThemeChangerComponent } from '../theme-changer/theme-changer.component';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 
 @Component({
@@ -23,6 +24,8 @@ import { ThemeChangerComponent } from '../theme-changer/theme-changer.component'
     HeadlineComponent,
     TextComponent,
     ThemeChangerComponent,
+    RouterLink,
+    RouterLinkActive
   ],
   templateUrl: './invoice.component.html',
   styleUrls: ['./invoice.component.css'],

@@ -1,154 +1,72 @@
-/* General form styling */
 form {
-  max-width: 800px;
+  width: 50%;
   margin: 0 auto;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Poppins', sans-serif;
+  border: 2px solid #000;
+  padding: 4rem;
 }
-
-.header {
-  text-align: center;
-  margin-bottom: 20px;
+.main-title{
+  margin-bottom: 3rem;
 }
-
-.form-group {
-  margin-bottom: 20px;
+.bills{
+  color: var(--color-primary-blue);
+  margin-top: 3rem;
 }
-
-.form-bill-from, .form-to {
-  margin-bottom: 30px;
+.form-text{
+  color: var(--color-soft-blue);
 }
-
-app-headline[type="H4"] {
-  color: #7c5dfa;
-  font-weight: bold;
-  margin-bottom: 10px;
+.Bill__group{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1rem;
 }
-
-app-text[type="Body1"] {
-  display: block;
-  color: #888eb0;
-  font-size: 14px;
-  margin-bottom: 5px;
-}
-
-input.form-input, select.form-select, input.calender {
+.form-input{
   width: 100%;
-  padding: 10px;
-  font-size: 14px;
-  color: #0c0e16;
-  border: 1px solid #dfe3fa;
+  height: 48px;
+  background: transparent;
+  padding-left: 20px;
+  border: 1px solid var(--color-muted-blue);
   border-radius: 4px;
-  background-color: #f9fafe;
-  outline: none;
-  margin-bottom: 15px;
+  font-size: 12px;
+  color: var(--color-dark-gray);
+  font-weight: 700;
+  margin-top: 1rem;
 }
-
-input.form-mini {
-  width: calc(33% - 10px);
-  padding: 10px;
-  font-size: 14px;
-  color: #0c0e16;
-  border: 1px solid #dfe3fa;
+.mini-input{
+  width: 152px;
+  height: 48px;
+  background: transparent;
+  padding-left: 20px;
+  border: 1px solid var(--color-muted-blue);
   border-radius: 4px;
-  background-color: #f9fafe;
-  outline: none;
-  margin-right: 10px;
+  font-size: 12px;
+  color: var(--color-dark-gray);
+  font-weight: 700;
+  margin-top: 1rem;
 }
-
-input.form-mini:last-child {
-  margin-right: 0;
-}
-
-/* Subform containers */
-.sub-form {
+/* .Bill{
+  width: 504px;
+  height: 209px;
+  border: 2px solid #494E6E;
+} */
+.forms{
   display: flex;
   justify-content: space-between;
-  gap: 10px;
-}
 
-.forms {
-  margin-bottom: 15px;
 }
-
-/* Buttons */
-button {
-  padding: 10px 20px;
-  font-size: 14px;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  opacity: 0.9;
-}
-
-button.cancel {
-  background-color: #f9fafe;
-  color: #7c5dfa;
-  margin-right: 10px;
-}
-
-button.save {
-  background-color: #7c5dfa;
-  color: #ffffff;
-}
-
-button.save:hover {
-  background-color: #5a44c8;
-}
-
-/* Add item list styling */
-.form-terms {
+.option{
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 10px;
 }
-
-.item-list {
-  margin-top: 20px;
-  border-top: 1px solid #dfe3fa;
-  padding-top: 20px;
-}
-
-.item-list .form-text {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.item-list table {
-  width: 100%;
-  border-spacing: 0;
-}
-
-.item-list th, .item-list td {
-  text-align: left;
-  padding: 10px 0;
-  font-size: 14px;
-  color: #0c0e16;
-}
-
-.item-list th {
-  color: #888eb0;
-}
-
-.item-list td {
-  border-bottom: 1px solid #dfe3fa;
-}
-
-.item-list .add-new-item {
-  color: #7c5dfa;
-  font-size: 14px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.add-new-item:hover {
-  text-decoration: underline;
+.sub-input{
+  width: 240px;
+  height: 48px;
+  background: transparent;
+  padding-left: 20px;
+  border: 1px solid var(--color-muted-blue);
+  border-radius: 4px;
+  font-size: 12px;
+  color: var(--color-dark-gray);
+  font-weight: 700;
+  margin-top: 1rem;
 }
