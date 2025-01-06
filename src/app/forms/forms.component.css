@@ -4,6 +4,7 @@ form {
 }
 .main-title{
   margin-bottom: 3rem;
+  color: var(--color-very-dark);
 }
 .bills{
   color: var(--color-primary-blue);
@@ -105,9 +106,17 @@ form {
   width: 100%;
   height: 48px;
   margin-top: 1.5rem;
-  background-color: var(--color-light-gray);
+  background-color: var( --color-almost-white);
   color: var(--color-muted-blue);
   border-radius: 25px;
   border: none;
   font-weight: 700;
+}
+.add-item:hover{
+  cursor: pointer;
+  background-color: var(--color-light-gray);
+  /* color: white; */
+}
+input:hover{
+  border: 2px solid var(--color-primary-blue);
 }
