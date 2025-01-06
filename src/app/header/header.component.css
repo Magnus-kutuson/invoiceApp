@@ -22,6 +22,7 @@
 }
 .invoice-btn:hover{
     background-color: var(--color-secondary-blue);
+    cursor: pointer;
 }
 .sub-header{
     /* width: 100%; */

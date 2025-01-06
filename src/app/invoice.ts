@@ -32,10 +32,12 @@ export interface InvoiceState {
   invoices: Invoice[];
   loading: boolean;
   error: string | null;
+  invoice: Invoice | undefined;
 }
 
 export const initialInvoiceState: InvoiceState = {
   invoices: [],
   loading: false,
   error: null,
+  invoice: undefined,
 };

@@ -17,8 +17,11 @@ export const invoiceFeature = createFeature({
             ...state,
             loading: false,
             error,
-        }))
+        })),
+        on(invoiceActions.findById, (state, { id }) => ({
+            ...state,
+            invoice: state.invoices.find((invoice) => invoice.id === id)  
+        })),
     )
 })
-
-export const {selectError, selectLoading, selectInvoices} = invoiceFeature;
+export const {selectError, selectLoading, selectInvoices, selectInvoice} = invoiceFeature;

@@ -4,6 +4,9 @@ import { HeadlineComponent } from '../headline/headline.component';
 import { TextComponent } from '../text/text.component';
 import { FilterComponent } from '../filter/filter.component';
 
+
+
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -13,4 +16,13 @@ import { FilterComponent } from '../filter/filter.component';
 })
 export class HeaderComponent {
 
+  isOpen = false;
+
+  toggleDrawer() {
+    this.isOpen = !this.isOpen;
+  }
+
+  closeDrawer() {
+    this.isOpen = false;
+  }
 }

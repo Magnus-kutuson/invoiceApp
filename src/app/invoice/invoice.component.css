@@ -18,6 +18,22 @@
   align-items: center;
   /* gap: 5rem; */
 }
+a{
+  text-decoration: none;
+}
+.form{
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  left: 6.5rem;
+  background-color: #00000090;
+  /* backdrop-filter: blur(4px); */
+  overflow-y: auto;
+}
+.form-container{
+  background-color: var(--color-white);
+  width: 50%;
+}
 .id{
     font-size: 14px;
     font-weight: 700;
@@ -61,4 +77,13 @@
 }
 .invoice-card:hover{
     border: 2px solid var(--color-primary-blue);
+}
+@media (max-width: 1023px) {
+  .form{
+      left: 0;
+  }
+.form-container{
+  width: 80%;
+}
+  
 }
