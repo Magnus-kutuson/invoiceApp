@@ -1,0 +1,36 @@
+<div class="date-picker">
+  <label for="issueDate" class="date-picker-label">Issue Date</label>
+  <div
+    class="date-picker-input"
+    [class.active]="isDatePickerOpen"
+    (click)="toggleDatePicker()"
+  >
+    <input
+      id="issueDate"
+      type="text"
+      [value]="selectedDate | date: 'dd MMM yyyy'"
+      readonly
+    />
+    <img src="assets/icons/calendar-icon.svg" alt="Calendar Icon" />
+  </div>
+
+  <div class="date-picker-popup" *ngIf="isDatePickerOpen">
+    <div class="date-picker-header">
+      <button (click)="previousMonth()">&#8249;</button>
+      <span>{{ currentMonth | date: 'MMM yyyy' }}</span>
+      <button (click)="nextMonth()">&#8250;</button>
+    </div>
+    <div class="date-picker-grid">
+      <span *ngFor="let day of daysOfWeek">{{ day }}</span>
+      <button
+        *ngFor="let date of calendarDates"
+        [class.selected]="isSelectedDate(date)"
+        [class.disabled]="isDisabled(date)"
+        (click)="selectDate(date)"
+      >
+        {{ date | date: 'd' }}
+      </button>
+    </div>
+  </div>
+</div>
+
