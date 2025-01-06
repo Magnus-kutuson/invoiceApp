@@ -10,7 +10,7 @@ import { FormsComponent } from './forms/forms.component';
   standalone: true,
   imports: [RouterOutlet, CommonModule, LayoutComponent, FormsComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'invoiceApp';

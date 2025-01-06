@@ -27,7 +27,7 @@ a{
   width: 100%;
   left: 6.5rem;
   background-color: #00000090;
-  /* backdrop-filter: blur(4px); */
+  backdrop-filter: blur(4px);
   overflow-y: auto;
 }
 .form-container{

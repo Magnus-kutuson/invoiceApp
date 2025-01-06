@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { HeadlineComponent } from '../headline/headline.component';
 import { TextComponent } from '../text/text.component';
 import { FilterComponent } from '../filter/filter.component';
+import { FormsComponent } from '../forms/forms.component';
+import { DataService } from '../data.service';
 
 
 
@@ -10,19 +12,16 @@ import { FilterComponent } from '../filter/filter.component';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, FilterComponent, HeadlineComponent, TextComponent],
+  imports: [CommonModule, FilterComponent, HeadlineComponent, TextComponent, FormsComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
 
-  isOpen = false;
-
-  toggleDrawer() {
-    this.isOpen = !this.isOpen;
+  constructor(private dataService: DataService) { }
+  
+  toggleFormVisibility(): void {
+    this.dataService.toggleFormVisibility();
   }
-
-  closeDrawer() {
-    this.isOpen = false;
-  }
+ 
 }

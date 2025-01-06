@@ -1,4 +1,4 @@
-import { Component, OnInit, Signal } from '@angular/core';
+import { Component,  OnInit, Signal, HostListener, ElementRef } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from '../data.service';
 import { CommonModule } from '@angular/common';
@@ -27,7 +27,7 @@ import { FormsComponent } from '../forms/forms.component';
     ThemeChangerComponent,
     RouterLink,
     RouterLinkActive,
-    FormsComponent
+    FormsComponent,
   ],
   templateUrl: './invoice.component.html',
   styleUrls: ['./invoice.component.css'],
@@ -36,22 +36,31 @@ export class InvoiceComponent implements OnInit {
   data: any = this.store.selectSignal(selectInvoices);
   loadingInvoice: any = this.store.selectSignal(selectLoading);
   error: Signal<string | null> = this.store.selectSignal(selectError);
-  isDarkMode: boolean = false; 
+  isDarkMode: boolean = false;
+  isFormVisible: boolean = false;
 
-  constructor(private dataService: DataService, private store: Store) {}
+  constructor(
+    private dataService: DataService,
+    private store: Store,
+    private elementRef: ElementRef
+  ) {}
 
   ngOnInit(): void {
     this.store.dispatch(invoiceActions.load());
-    this.updateBodyClass();
+
+    this.dataService.formVisible$.subscribe((visible) => {
+      this.isFormVisible = visible;
+    });
   }
-  updateBodyClass() {
-    if (this.isDarkMode) {
-      document.body.classList.add('dark-mode');
-      document.body.classList.remove('light-mode');
-    } else {
-      document.body.classList.add('light-mode');
-      document.body.classList.remove('dark-mode');
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    if (!this.isFormVisible) return; 
+
+    const targetElement = event.target as HTMLElement;
+    const clickedInside = this.elementRef.nativeElement.contains(targetElement);
+
+    if (!clickedInside) {
+      this.isFormVisible = false; 
     }
   }
-
 }
