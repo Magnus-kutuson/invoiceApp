@@ -1,6 +1,6 @@
 form {
   padding: 4rem;
-   overflow-y: auto;
+  overflow-y: auto;
 }
 .main-title{
   margin-bottom: 3rem;
@@ -57,6 +57,7 @@ form {
 .option{
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .sub-input{
   width: 240px;
@@ -68,6 +69,9 @@ form {
   font-size: 12px;
   color: var(--color-dark-gray);
   font-weight: 700;
+  margin-top: 1rem;
+}
+.date-picker{
   margin-top: 1rem;
 }
 .option{

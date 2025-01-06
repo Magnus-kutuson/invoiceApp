@@ -55,14 +55,14 @@
    <div class="option">
      <div class="Bill__group">
       <app-text type="Body1" class="form-text">Invoice Date</app-text>
-      <input type="date" class="sub-input" formControlName="date" />
-    </div>
-    <div class="Bill__group">
+      <app-date-picker class="date-picker"></app-date-picker>
+     </div>
+     <div class="Bill__group">
       <app-text type="Body1" class="form-text">Payment Terms</app-text>
       <select name="" id=""  class="sub-input" formControlName="terms">
         <option value="" *ngFor="let item of items">{{item.title}}</option>
       </select>
-    </div>
+     </div>
    </div>
     <div class="Bill__group">
       <app-text type="Body1" class="form-text">Project Description</app-text>

@@ -1,5 +1,5 @@
 <div class="date-picker">
-  <label for="issueDate" class="date-picker-label">Issue Date</label>
+  <!-- <label for="issueDate" class="date-picker-label">Issue Date</label> -->
   <div
     class="date-picker-input"
     [class.active]="isDatePickerOpen"
@@ -11,14 +11,14 @@
       [value]="selectedDate | date: 'dd MMM yyyy'"
       readonly
     />
-    <img src="assets/icons/calendar-icon.svg" alt="Calendar Icon" />
+    <img src="../../assets/images/calendar-icon.svg" alt="Calendar Icon" />
   </div>
 
   <div class="date-picker-popup" *ngIf="isDatePickerOpen">
     <div class="date-picker-header">
-      <button (click)="previousMonth()">&#8249;</button>
+      <button (click)="previousMonth()"><img src="../../assets/images/arrow-left.svg" alt="arrow-left"></button>
       <span>{{ currentMonth | date: 'MMM yyyy' }}</span>
-      <button (click)="nextMonth()">&#8250;</button>
+      <button (click)="nextMonth()"><img src="../../assets/images/arrow-right.svg" alt="arrow-right"></button>
     </div>
     <div class="date-picker-grid">
       <span *ngFor="let day of daysOfWeek">{{ day }}</span>
