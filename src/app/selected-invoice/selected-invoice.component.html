@@ -8,8 +8,27 @@
       </div>
     </a>  
  <div class="selected_invoice_header">
+  <div class="selected_invoice_header_content">
+    <app-text type="Body1" class="text-style">Status</app-text>
+    <app-badge [status]="invoiceDetails.status">{{invoiceDetails.status}}</app-badge>
+  </div>
+<div class="btns">
+ <button class="edit">Edit</button>
+ <button class="delete">Delete</button>
+ <button class="mark">Mark as paid</button>
+</div>
  </div>
 <div class="selected_invoice_container">
+ <div class="rightSide-container">
+  <app-headline type="H3"><span>#</span>{{invoiceDetails.id}}</app-headline>
+  <app-text type="Body1" class="description">{{invoiceDetails.description}}</app-text>
+ </div>
+<div class="leftSide-container">
+  <app-text type="Body1">{{invoiceDetails.senderAddress.street}}</app-text>
+  <app-text type="Body1">{{invoiceDetails.senderAddress.city}}</app-text>
+  <app-text type="Body1">{{invoiceDetails.senderAddress.postCode}}</app-text>
+  <app-text type="Body1">{{invoiceDetails.senderAddress.country}}</app-text>
+</div>
 </div>
  <router-outlet />
 </div>

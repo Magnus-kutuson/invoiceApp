@@ -6,6 +6,8 @@ import { invoiceActions } from '../Stores/actions';
 import { Store } from '@ngrx/store';
 import { selectInvoice, selectInvoices } from '../Stores/reducer';
 import { ActivatedRoute } from '@angular/router';
+import { BadgeComponent } from '../badge/badge.component';
+
 
 
 
@@ -20,6 +22,7 @@ import { ActivatedRoute } from '@angular/router';
     RouterOutlet,
     RouterLinkActive,
     HeadlineComponent,
+    BadgeComponent
   ],
   templateUrl: './selected-invoice.component.html',
   styleUrl: './selected-invoice.component.css',
