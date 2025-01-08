@@ -20,6 +20,8 @@
 }
 a{
   text-decoration: none;
+  display: inline-block;
+  width: 100%;
 }
 .form{
   position: fixed;
@@ -31,7 +33,7 @@ a{
   overflow-y: auto;
 }
 .form-container{
-  background-color: var(--color-white);
+  background-color: var(--color-almost-white);
   width: 50%;
 }
 .id{

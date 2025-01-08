@@ -20,7 +20,7 @@ export const invoiceFeature = createFeature({
         })),
         on(invoiceActions.findById, (state, { id }) => ({
             ...state,
-            invoice: state.invoices.find((invoice) => invoice.id === id)  
+            findById: state.invoices.find((invoice) => invoice.id === id)  
         })),
     )
 })

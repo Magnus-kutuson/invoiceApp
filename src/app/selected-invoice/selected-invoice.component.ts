@@ -25,15 +25,21 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './selected-invoice.component.css',
 })
 export class SelectedInvoiceComponent implements OnInit {
-  invoiceDetails: any = this.store.selectSignal(selectInvoice);
-  invoices: any = this.store.selectSignal(selectInvoices);
+  invoiceDetails: any 
+  invoices$: any =this.store.select(selectInvoices)
+
 
   routes:ActivatedRoute = inject(ActivatedRoute);
 
   constructor(private store: Store) {}
 
   ngOnInit(): void {
-    this.store.dispatch(invoiceActions.findById({ id: this.routes.snapshot.params['id'] }));
-    this.store.dispatch(invoiceActions.load());
+    // this.store.dispatch(invoiceActions.findById({ id: this.routes.snapshot.params['id'] }));
+    // this.store.dispatch(invoiceActions.load());
+    const invoiceId = this.routes.snapshot.paramMap.get('id');
+    this.invoices$.subscribe((invoices: any) => {
+      this.invoiceDetails = invoices.find((invoice: any) => invoice.id === invoiceId);
+       console.log(this.invoiceDetails);
+  });
   }
 }

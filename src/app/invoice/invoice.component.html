@@ -1,11 +1,9 @@
 <div class="header">
   <app-header></app-header>
-  <a routerLink="/invoice/:id"
-        routerLinkActive="active"
-        ariaCurrentWhenActive="page"> 
   <ng-container *ngIf="data().length > 0; else emptyState">
     <div class="invoice-card" *ngFor="let dataList of data()">
-      <div class="card-content" >
+      <a [routerLink]="dataList.id" >
+        <div class="card-content" >
         <p class="id"><span>#</span>{{ dataList.id }}</p>
         <p class="due">{{ dataList.paymentDue }}</p>
         <p class="name">{{ dataList.clientName }}</p>
@@ -13,10 +11,14 @@
         <app-badge [status]="dataList.status">{{ dataList.status }}</app-badge>
           <img src="../../assets/images/arrow-right.svg" alt="arrow-right">
       </div> 
+      </a>
     </div>
   </ng-container>
-  </a>
 </div>
+
+
+
+
 <ng-template #emptyState>
   <div class="empty-state">
     <img class="empty-state-image"
@@ -31,4 +33,5 @@
         <div class="form-container" #formContainer>
           <app-forms></app-forms>
         </div>
+        <app-footer></app-footer>
   </div>

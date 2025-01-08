@@ -12,6 +12,8 @@ import { selectError, selectInvoices, selectLoading } from '../Stores/reducer';
 import { ThemeChangerComponent } from '../theme-changer/theme-changer.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { FormsComponent } from '../forms/forms.component';
+import { FooterComponent } from '../footer/footer.component';
+
 
 
 @Component({
@@ -28,6 +30,7 @@ import { FormsComponent } from '../forms/forms.component';
     RouterLink,
     RouterLinkActive,
     FormsComponent,
+    FooterComponent
   ],
   templateUrl: './invoice.component.html',
   styleUrls: ['./invoice.component.css'],

@@ -33,6 +33,7 @@ export interface InvoiceState {
   loading: boolean;
   error: string | null;
   invoice: Invoice | undefined;
+  findById: Invoice | undefined;
 }
 
 export const initialInvoiceState: InvoiceState = {
@@ -40,4 +41,5 @@ export const initialInvoiceState: InvoiceState = {
   loading: false,
   error: null,
   invoice: undefined,
+  findById: undefined
 };
