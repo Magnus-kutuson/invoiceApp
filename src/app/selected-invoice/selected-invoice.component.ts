@@ -46,5 +46,4 @@ export class SelectedInvoiceComponent implements OnInit {
       console.log(this.invoiceDetails);
     });
   }
-
 }

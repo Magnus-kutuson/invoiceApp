@@ -1,0 +1,12 @@
+.delete-card{
+    width: 480px;
+    height: 249px;
+    border-radius: 8px;
+    background-color: var(--color-white);
+}
+.delete-card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12rem ;
+}
