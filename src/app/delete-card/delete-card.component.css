@@ -3,10 +3,24 @@
     height: 249px;
     border-radius: 8px;
     background-color: var(--color-white);
+    padding: 3rem;
 }
 .delete-card-container{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 12rem ;
+}
+.header{
+    color: var(--color-very-dark);
+    margin-bottom: 1rem;
+}
+.text{
+    color: var(--color-muted-blue);
+    /* margin-top: 2rem; */
+}
+.btns{
+    display: flex;
+    justify-content: center;
+    align-items: end;
 }
