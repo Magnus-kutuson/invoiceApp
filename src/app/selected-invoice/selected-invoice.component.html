@@ -19,16 +19,113 @@
 </div>
  </div>
 <div class="selected_invoice_container">
- <div class="rightSide-container">
+  <div class="container-content">
+  <div class="rightSide-container">
   <app-headline type="H3"><span>#</span>{{invoiceDetails.id}}</app-headline>
   <app-text type="Body1" class="description">{{invoiceDetails.description}}</app-text>
  </div>
 <div class="leftSide-container">
-  <app-text type="Body1">{{invoiceDetails.senderAddress.street}}</app-text>
-  <app-text type="Body1">{{invoiceDetails.senderAddress.city}}</app-text>
-  <app-text type="Body1">{{invoiceDetails.senderAddress.postCode}}</app-text>
-  <app-text type="Body1">{{invoiceDetails.senderAddress.country}}</app-text>
+  <app-text type="Body1" class="description">{{invoiceDetails.senderAddress.street}}</app-text>
+  <app-text type="Body1" class="description">{{invoiceDetails.senderAddress.city}}</app-text>
+  <app-text type="Body1"  class="description">{{invoiceDetails.senderAddress.postCode}}</app-text>
+  <app-text type="Body1" class="description">{{invoiceDetails.senderAddress.country}}</app-text>
 </div>
+  </div>
+
+
+<section class="invoice-summary">
+    <div class="invoice-summary__content">
+      <div class="invoice-summary__group">
+        <div class="invoice-summary__item">
+          <app-text type="Body1" class="invoice-summary__label" 
+            >Invoice Date</app-text
+          >
+          <app-headline type="H3" class="invoice-summary__value">{{
+            invoiceDetails.createdAt
+          }}</app-headline>
+        </div>
+        <div class="invoice-summary__item">
+          <app-text type="Body1" class="invoice-summary__label" 
+            >Payment Due</app-text
+          >
+          <app-headline type="H3" class="invoice-summary__value">{{
+            invoiceDetails.paymentDue
+          }}</app-headline>
+        </div>
+      </div>
+      <div class="invoice-summary__group">
+        <div class="invoice-summary__item">
+          <app-text class="invoice-summary__label" type="Body1"
+            >Bill To</app-text
+          >
+          <app-headline type="H3">{{ invoiceDetails.clientName }}</app-headline>
+          <app-text class="invoice-summary__address-line" type="Body1">{{
+            invoiceDetails.clientAddress.street
+          }}</app-text>
+          <app-text class="invoice-summary__address-line" type="Body1">{{
+            invoiceDetails.clientAddress.city
+          }}</app-text>
+          <app-text class="invoice-summary__address-line" type="Body1">{{
+            invoiceDetails.clientAddress.postCode
+          }}</app-text>
+          <app-text class="invoice-summary__address-line" type="Body1">{{
+            invoiceDetails.clientAddress.country
+          }}</app-text>
+        </div>
+      </div>
+      <div class="invoice-summary__group">
+        <div class="invoice-summary__item">
+          <app-text class="invoice-summary__label" type="Body1"
+            >Sent to</app-text
+          >
+          <app-headline type="H3">{{ invoiceDetails.clientEmail }}</app-headline>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <section class="invoice-table">
+    <div class="invoice-table-content">
+      <div class="invoice-table__header">
+        <app-text class="invoice-table__label" type="Body1">Item Name</app-text>
+        <app-text class="invoice-table__label" type="Body1">QTY.</app-text>
+        <app-text class="invoice-table__label" type="Body1">Price</app-text>
+        <app-text class="invoice-table__label" type="Body1">Total</app-text>
+      </div>
+      @for (item of invoices$.items; track $index) {
+
+      <div class="invoice-table__item">
+        <app-headline type="H2" class="invoice-table__item-name">{{ item.name }}</app-headline>
+        <app-text class="invoice-table__qty" type="Body1">{{ item.quantity }}</app-text>
+        <app-text class="invoice-table__price" type="Body1">{{ item.price }}</app-text>
+        <app-headline class="invoice-table__total">{{ item.total }}</app-headline>
+      </div>
+
+      <div class="invoice-table__item-2">
+        <div class="invoice-table__item-2-display">
+          <div>
+            <app-headline type="H2" class="invoice-table__item-name">{{ item.name }}</app-headline>
+            <app-text class="invoice-table__qty" type="Body1"
+              >{{ item.quantity }}x £{{ item.price }}</app-text
+            >
+          </div>
+          <app-headline  type="H2" class="invoice-table__total">
+            {{ item.total }}
+          </app-headline>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="invoice-table__footer">
+      <app-text class="invoice-table__amount-label" type="Body1"
+        ><span>Grand Total</span></app-text
+      >
+      <app-headline class="invoice-table__amount" type="H1"
+        >£ {{ invoiceDetails.total }}</app-headline
+      >
+    </div>
+  </section>
+
 </div>
  <router-outlet />
 </div>

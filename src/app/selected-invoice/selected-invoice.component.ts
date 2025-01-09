@@ -22,17 +22,16 @@ import { BadgeComponent } from '../badge/badge.component';
     RouterOutlet,
     RouterLinkActive,
     HeadlineComponent,
-    BadgeComponent
+    BadgeComponent,
   ],
   templateUrl: './selected-invoice.component.html',
   styleUrl: './selected-invoice.component.css',
 })
 export class SelectedInvoiceComponent implements OnInit {
-  invoiceDetails: any 
-  invoices$: any =this.store.select(selectInvoices)
+  invoiceDetails: any;
+  invoices$: any = this.store.select(selectInvoices);
 
-
-  routes:ActivatedRoute = inject(ActivatedRoute);
+  routes: ActivatedRoute = inject(ActivatedRoute);
 
   constructor(private store: Store) {}
 
@@ -41,8 +40,11 @@ export class SelectedInvoiceComponent implements OnInit {
     // this.store.dispatch(invoiceActions.load());
     const invoiceId = this.routes.snapshot.paramMap.get('id');
     this.invoices$.subscribe((invoices: any) => {
-      this.invoiceDetails = invoices.find((invoice: any) => invoice.id === invoiceId);
-       console.log(this.invoiceDetails);
-  });
+      this.invoiceDetails = invoices.find(
+        (invoice: any) => invoice.id === invoiceId
+      );
+      console.log(this.invoiceDetails);
+    });
   }
+
 }
