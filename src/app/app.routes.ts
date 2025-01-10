@@ -5,7 +5,7 @@ import { SelectedInvoiceComponent } from './selected-invoice/selected-invoice.co
 import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginComponent },
   {
     path: '',
     component: LayoutComponent,
