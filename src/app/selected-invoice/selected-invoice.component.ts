@@ -8,6 +8,9 @@ import { selectInvoice, selectInvoices } from '../Stores/reducer';
 import { ActivatedRoute } from '@angular/router';
 import { BadgeComponent } from '../badge/badge.component';
 import { DeleteCardComponent } from '../delete-card/delete-card.component';
+import { DataService } from '../data.service';
+import { CommonModule } from '@angular/common';
+
 
 
 
@@ -24,7 +27,8 @@ import { DeleteCardComponent } from '../delete-card/delete-card.component';
     RouterLinkActive,
     HeadlineComponent,
     BadgeComponent,
-    DeleteCardComponent
+    DeleteCardComponent,
+    CommonModule,
   ],
   templateUrl: './selected-invoice.component.html',
   styleUrl: './selected-invoice.component.css',
@@ -32,10 +36,12 @@ import { DeleteCardComponent } from '../delete-card/delete-card.component';
 export class SelectedInvoiceComponent implements OnInit {
   invoiceDetails: any;
   invoices$: any = this.store.select(selectInvoices);
+  deleteVisible: boolean = false;
+
 
   routes: ActivatedRoute = inject(ActivatedRoute);
 
-  constructor(private store: Store) {}
+  constructor(private store: Store, private dataService: DataService) {}
 
   ngOnInit(): void {
     // this.store.dispatch(invoiceActions.findById({ id: this.routes.snapshot.params['id'] }));
@@ -47,5 +53,13 @@ export class SelectedInvoiceComponent implements OnInit {
       );
       console.log(this.invoiceDetails);
     });
+
+     this.dataService.deleteVisible$.subscribe((visible) => {
+        this.deleteVisible = visible;
+      });
+  }
+
+  toggleDeleteVisibility(): void {
+    this.dataService.toggleDeleteVisibility();
   }
 }

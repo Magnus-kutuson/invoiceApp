@@ -10,6 +10,8 @@ export class DataService {
   private jsonURL = '../../../assets/data.json';
   private formVisibleSource = new BehaviorSubject<any>(null);
   formVisible$ = this.formVisibleSource.asObservable();
+  private deleteVisibleSource = new BehaviorSubject<any>(null);
+  deleteVisible$ = this.deleteVisibleSource.asObservable();
 
   constructor(private http: HttpClient) {}
 
@@ -19,5 +21,9 @@ export class DataService {
 
   toggleFormVisibility(): void {
     this.formVisibleSource.next(!this.formVisibleSource.value);
+  }
+
+  toggleDeleteVisibility(): void {
+    this.deleteVisibleSource.next(!this.deleteVisibleSource.value);
   }
 }
