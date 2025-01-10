@@ -1,1 +1,19 @@
-<p>dropdown works!</p>
+<div class="dropdown">
+  <label for="payment-terms">Payment Terms</label>
+  <div class="dropdown-header" (click)="toggleDropdown()">
+    <span>{{ selectedOption }}</span>
+    <span class="arrow">
+        <img src="../../assets/images/arrow-down.svg" alt="arrow-drop">
+    </span>
+  </div>
+  <ul class="dropdown-list" [class.open]="isOpen">
+    <li
+      *ngFor="let option of options"
+      (click)="selectOption(option)"
+      [class.selected]="option === selectedOption"
+    >
+      {{ option }}
+    </li>
+  </ul>
+</div>
+
