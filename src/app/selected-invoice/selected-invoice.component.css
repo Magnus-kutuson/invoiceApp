@@ -39,6 +39,17 @@ a{
   text-decoration: none;
   color: none;
 }
+.delete-card{
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  left: 6.5rem;
+  background-color: #00000090;
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .selected_invoice_container{
     width: 730px;
     height: 70vh;

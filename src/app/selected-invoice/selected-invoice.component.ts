@@ -7,6 +7,7 @@ import { Store } from '@ngrx/store';
 import { selectInvoice, selectInvoices } from '../Stores/reducer';
 import { ActivatedRoute } from '@angular/router';
 import { BadgeComponent } from '../badge/badge.component';
+import { DeleteCardComponent } from '../delete-card/delete-card.component';
 
 
 
@@ -23,6 +24,7 @@ import { BadgeComponent } from '../badge/badge.component';
     RouterLinkActive,
     HeadlineComponent,
     BadgeComponent,
+    DeleteCardComponent
   ],
   templateUrl: './selected-invoice.component.html',
   styleUrl: './selected-invoice.component.css',

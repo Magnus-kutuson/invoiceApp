@@ -13,6 +13,7 @@ import { ThemeChangerComponent } from '../theme-changer/theme-changer.component'
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { FormsComponent } from '../forms/forms.component';
 import { FooterComponent } from '../footer/footer.component';
+import { DeleteCardComponent } from '../delete-card/delete-card.component';
 
 
 
@@ -30,7 +31,8 @@ import { FooterComponent } from '../footer/footer.component';
     RouterLink,
     RouterLinkActive,
     FormsComponent,
-    FooterComponent
+    FooterComponent,
+    DeleteCardComponent
   ],
   templateUrl: './invoice.component.html',
   styleUrls: ['./invoice.component.css'],

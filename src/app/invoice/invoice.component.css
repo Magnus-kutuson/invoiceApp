@@ -36,6 +36,11 @@ a{
   background-color: var(--color-almost-white);
   width: 50%;
 }
+
+/* .delete-card-container{
+  background-color: var(--color-almost-white);
+  width: 50%;
+} */
 .id{
     font-size: 14px;
     font-weight: 700;
