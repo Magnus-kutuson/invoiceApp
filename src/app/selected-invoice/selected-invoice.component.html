@@ -14,7 +14,7 @@
   </div>
 <div class="btns">
  <button class="edit">Edit</button>
- <button class="delete" (click)="toggleDeleteVisibility">Delete</button>
+ <button class="delete">Delete</button>
  <button class="mark">Mark as paid</button>
 </div>
  </div>
@@ -129,7 +129,7 @@
 </div>
  <router-outlet />
 </div>
- <div class="delete-card" *ngIf="deleteVisible">
+ <div class="delete-card" >
       <app-delete-card></app-delete-card>
   </div>
  

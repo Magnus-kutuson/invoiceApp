@@ -28,6 +28,14 @@ export interface Invoice {
   total: number;
 }
 
+export type FieldProps = {
+  type: string;
+  name: string;
+  id: string;
+  class: string;
+};
+
+
 export interface InvoiceState {
   invoices: Invoice[];
   loading: boolean;

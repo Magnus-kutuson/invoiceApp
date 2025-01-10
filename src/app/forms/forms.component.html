@@ -2,27 +2,69 @@
   <div  class="main-title">
     <app-headline type="H1">New Invoice</app-headline>
   </div>
-  <div class="Bill">
-   <app-headline type="H4" class="bills">Bill From</app-headline>
-    <div class="Bill__group">
-     <app-text type="Body1" class="form-text">Street Address</app-text>
-     <input type="text" class="form-input" formControlName="address" />
-   </div>
-   <div class="forms">
-    <div class="Bill__group">
-      <app-text type="Body1" class="form-text">City</app-text>
-      <input type="text" class="mini-input" formControlName="city" />
+
+  <!-- Bill From -->
+<div class="form__section">
+      <app-headline class="form__section-title">Bill From</app-headline>
+      <div class="form__group">
+        <label for="fromStreet" class="form__label">Street Address</label>
+        <app-text-field
+          class="form__input"
+          [fieldProps]="{
+            id: 'fromStreet',
+            name: 'senderStreet',
+            type: 'text',
+            class: 'form__input',
+
+          }"
+          controlName="senderStreet"
+        />
+      </div>
+
+      <div class="form__group form__group--inline">
+        <div class="form__input-wrapper">
+          <label for="fromCity" class="form__label">City</label>
+          <app-text-field
+            class="form__input"
+            [fieldProps]="{
+              id: 'fromCity',
+              name: 'senderCity',
+              type: 'text',
+              class: 'form__input',
+            }"
+            controlName="senderCity"
+          />
+        </div>
+
+        <div class="form__input-wrapper">
+          <label for="fromPostCode" class="form__label">Post Code</label>
+          <app-text-field
+            class="form__input"
+            [fieldProps]="{
+              id: 'fromPostCode',
+              name: 'senderPostCode',
+              type: 'text',
+              class: 'form__input',
+            }"
+            controlName="senderPostCode"
+          />
+        </div>
+
+        <div class="form__input-wrapper">
+          <label for="fromCountry" class="form__label">Country</label>
+          <app-text-field
+            class="form__input"
+            [fieldProps]="{
+              id: 'fromCountry',
+              name: 'senderCountry',
+              type: 'text',
+              class: 'form__input'
+            }"
+            controlName="senderCountry"
+          />
+        </div>
+      </div>
     </div>
-    <div class="Bill__group">
-      <app-text type="Body1" class="form-text">Post Code</app-text>
-      <input type="text" class="mini-input" formControlName="postCode" />
-    </div>
-    <div class="Bill__group">
-      <app-text type="Body1" class="form-text">Country</app-text>
-      <input type="text" class="mini-input" formControlName="country" />
-    </div>
-   </div>
-  </div>
   <div class="Bill">
     <app-headline type="H4" class="bills">Bill To</app-headline>
     <div class="Bill__group">

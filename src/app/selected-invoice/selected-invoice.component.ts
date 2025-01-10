@@ -53,13 +53,12 @@ export class SelectedInvoiceComponent implements OnInit {
       );
       console.log(this.invoiceDetails);
     });
-
-     this.dataService.deleteVisible$.subscribe((visible) => {
-        this.deleteVisible = visible;
-      });
+  }
+  openPopup() {
+    this.deleteVisible = true;
   }
 
-  toggleDeleteVisibility(): void {
-    this.dataService.toggleDeleteVisibility();
+  closePopup() {  
+    this.deleteVisible = false;
   }
 }

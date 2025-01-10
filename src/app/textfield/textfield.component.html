@@ -1,3 +1,7 @@
-<form class="textfield" [[formGroup]="myForm">]>
-    <input type="text" >
-</form>
+<input
+  [type]="fieldProps().type"
+  [name]="fieldProps().name"
+  [id]="fieldProps().id"
+  [class]="fieldProps().class"
+  [formControlName]="controlName()"
+/>
