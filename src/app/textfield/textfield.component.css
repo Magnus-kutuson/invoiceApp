@@ -8,6 +8,7 @@ textarea {
   border-radius: 0.4rem;
   font-size: 1.6rem;
   resize: none;
+  background-color: transparent;
 }
 
 .form__group {

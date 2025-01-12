@@ -8,7 +8,7 @@ import { HeadlineComponent } from '../headline/headline.component';
 import { TextComponent } from '../text/text.component';
 import { Store } from '@ngrx/store';
 import { invoiceActions } from '../Stores/actions';
-import { selectError, selectInvoices, selectLoading } from '../Stores/reducer';
+import { selectError, selectInvoices, selectLoading, selectStatuses } from '../Stores/reducer';
 import { ThemeChangerComponent } from '../theme-changer/theme-changer.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { FormsComponent } from '../forms/forms.component';

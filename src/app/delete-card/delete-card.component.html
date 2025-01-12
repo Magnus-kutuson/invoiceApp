@@ -1,8 +1,8 @@
 <div class="confirm-dialog">
   <h2>Confirm Deletion</h2>
-  <p>Are you sure you want to delete invoice <strong>#XM9141</strong>? This action cannot be undone.</p>
+  <p>Are you sure you want to delete invoice <strong>{{ invoiceDetails.id }}</strong>? This action cannot be undone.</p>
   <div class="dialog-actions">
-    <button class="cancel-button">Cancel</button>
+    <button class="cancel-button" (click)="closeDialog()">Cancel</button>
     <button class="delete-button">Delete</button>
   </div>
 </div>

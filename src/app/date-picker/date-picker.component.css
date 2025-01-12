@@ -1,7 +1,7 @@
 .date-picker {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  /* gap: 10px; */
 }
 
 .date-picker-label {
@@ -36,7 +36,7 @@ input{
 
 .date-picker-popup {
   position: absolute;
-  bottom: -17rem;
+  bottom: -13rem;
   background: var(--color-white);
   border: none;
   border-radius: 8px;

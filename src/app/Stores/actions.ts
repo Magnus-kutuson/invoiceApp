@@ -1,5 +1,5 @@
 import { createActionGroup, emptyProps, props } from "@ngrx/store";
-import { Invoice } from "../invoice";
+import { Invoice, FieldProps, BadgeVariants } from '../invoice';
 
 
 
@@ -14,6 +14,8 @@ export const invoiceActions = createActionGroup({
     loadFailure: props<{ error: string }>(),
     findById: props<{ id: string }>(),
     clear: emptyProps(),
+    FieldProps: props<{ fieldProps: FieldProps }>(),
+    statuses: props<{ statuses: BadgeVariants[]}>()
   },
 });
 

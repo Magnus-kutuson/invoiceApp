@@ -21,7 +21,7 @@ export interface Invoice {
   paymentTerms: number;
   clientName: string;
   clientEmail: string;
-  status: 'paid' | 'pending' | 'draft';
+  status: BadgeVariants[];
   senderAddress: Address;
   clientAddress: Address;
   items: Item[];
@@ -35,6 +35,8 @@ export type FieldProps = {
   class: string;
 };
 
+export type BadgeVariants = 'paid' | 'pending' | 'draft';
+
 
 export interface InvoiceState {
   invoices: Invoice[];
@@ -42,6 +44,8 @@ export interface InvoiceState {
   error: string | null;
   invoice: Invoice | undefined;
   findById: Invoice | undefined;
+  statuses: BadgeVariants[];
+  fieldprops: [];
 }
 
 export const initialInvoiceState: InvoiceState = {
@@ -49,5 +53,7 @@ export const initialInvoiceState: InvoiceState = {
   loading: false,
   error: null,
   invoice: undefined,
-  findById: undefined
+  findById: undefined,
+  statuses: [],
+  fieldprops: [],
 };

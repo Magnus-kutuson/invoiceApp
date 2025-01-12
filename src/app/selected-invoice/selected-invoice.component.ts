@@ -41,7 +41,7 @@ export class SelectedInvoiceComponent implements OnInit {
 
   routes: ActivatedRoute = inject(ActivatedRoute);
 
-  constructor(private store: Store, private dataService: DataService) {}
+  constructor(private store: Store, private dataService: DataService) { }
 
   ngOnInit(): void {
     // this.store.dispatch(invoiceActions.findById({ id: this.routes.snapshot.params['id'] }));
@@ -54,11 +54,12 @@ export class SelectedInvoiceComponent implements OnInit {
       console.log(this.invoiceDetails);
     });
   }
-  openPopup() {
-    this.deleteVisible = true;
+  openDialog(): void{
+    this.deleteVisible = true
   }
 
-  closePopup() {  
-    this.deleteVisible = false;
+  closeDialog(): void{
+    this.deleteVisible = false
   }
+  
 }

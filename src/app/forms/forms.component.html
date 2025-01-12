@@ -1,4 +1,5 @@
-<form action="#" [formGroup]="invoiceForm"
+<!-- <div class="form-container"> -->
+  <form action="#" [formGroup]="invoiceForm"
   class="form"
   novalidate
   (ngSubmit)="onSubmit()"
@@ -72,7 +73,6 @@
     </div>
     <!-- bill to -->
   <div class="Bill">
-    <app-headline type="H4" class="bills">Bill To</app-headline>
     <div class="form__section">
       <app-headline class="form__section-title">Bill To</app-headline>
 
@@ -159,8 +159,101 @@
           />
         </div>
       </div>
+    </div><!-- Invoice Date and Payment Terms -->
+    <div class="form__section-form__section--inline">
+      <div class="form__group">
+        <label for="invoiceDate" class="form__label">Invoice Date</label>
+        <div class="form__input-wrapper">
+          <app-date-picker />
+         
+        </div>
+      </div>
+
+      <div class="form__group">
+        <label for="paymentTerms" class="form__label">Payment Terms</label>
+        <div class="form__input-wrapper">
+          <app-dropdown />
+        </div>
+      </div>
     </div>
-   <!-- tablet -->
+
+    <!-- Project Description -->
+    <div class="form__group">
+      <label for="projectDescription" class="form__label"
+        >Project Description</label
+      >
+      <app-textfield
+        class="form__input"
+        [fieldProps]="{
+          id: 'projectDescription',
+          name: 'description',
+          type: 'text',
+          class: 'form__input item-list__input item-list__input-first'
+        }"
+        controlName="description"
+      />
+    </div>
+
+    <!-- Item List -->
+    <div class="form__section-header">
+      <app-headline type="H2" class="form__section-title--mod"
+        >Item List</app-headline
+      >
+    </div>
+
+    <!-- mobile -->
+    <div class="mod-mobile">
+      <div class="form__group">
+        <label for="itemName" class="form__label">Item Name</label>
+        <app-textfield
+          class="form__input"
+          [fieldProps]="{
+            id: 'itemName',
+            name: 'name',
+            type: 'text',
+            class: 'form__input item-list__input item-list__input-first'
+          }"
+          controlName="itemName"
+        />
+      </div>
+      <div class="item-list-mod">
+        <div class="item-list__header-mod">
+          <app-text variant="p">Qty.</app-text>
+          <app-text variant="p">Price</app-text>
+          <app-text variant="p">Total</app-text>
+        </div>
+
+        <!-- First Item Row -->
+        <div class="item-list__row-mod">
+          <app-textfield
+            [fieldProps]="{
+              id: 'quantity',
+              name: 'itemQuantity',
+              type: 'text',
+              class: 'form__input item-list__input'
+            }"
+            controlName="itemQuantity"
+          />
+
+          <app-textfield
+            [fieldProps]="{
+              id: 'price',
+              name: 'itemPrice',
+              type: 'number',
+              class: 'form__input item-list__input'
+            }"
+            controlName="itemPrice"
+          />
+
+          <app-headline variant="h3" class="item-list__total"
+            >156.00</app-headline
+          >
+         <img src="../../assets/images/delete-icon.svg" alt="">
+        </div>
+      </div>
+    </div>
+
+    <!-- tablet -->
     <div class="item-list">
       <div class="item-list__header">
         <app-text class="first-item" variant="p">Item Name</app-text>
@@ -203,13 +296,13 @@
           controlName="itemPrice"
         />
 
-        <app-headline variant="h3" class="item-list__total"
+        <app-headline type="H3" class="item-list__total"
           >156.00</app-headline
         >
-       <img src="../../assets/images/delete-icon.svg" alt="">
+        <img src="../../assets/images/delete-icon.svg" alt="">
       </div>
       
-        <app-textfield
+        <!-- <app-textfield
           class="item-list__input-first"
           [fieldProps]="{
             id: 'itemName',
@@ -227,7 +320,7 @@
             type: 'number',
             class: 'form__input item-list__input'
           }"
-          controlName="quantity"
+          controlName="itemQuantity"
         />
         <app-textfield
           [fieldProps]="{
@@ -236,34 +329,13 @@
             type: 'number',
             class: 'form__input item-list__input'
           }"
-          controlName="price"
+          controlName="itemPrice"
         />
 
-        <app-headline variant="h3" class="item-list__total"
+        <app-headline type="H3" class="item-list__total"
           >400.00</app-headline
         >
         <img src="../../assets/images/delete-icon.svg" alt="">
-
-      <!-- Add New Item Button -->
-      <div class="add-btn-container">
-        <button type="submit">+ Add new Item</button>
-      </div>
-
-      <p *ngIf="isFormSubmitted && Forms.invalid" class="form__error">
-        All fields must be added
-      </p>
-    </div>
-  </div>
-
-  <div class="cta_container">
-    <div class="invoice__actions-mod" role="group" aria-label="Invoice actions">
-    <button class="invoice__button invoice__button--discard">Discard</button>
-      <div class="save_draft">
-      <button class="invoice__button invoice__button--draft">Save as Draft</button> 
-      <button class="invoice__button invoice__button--save">
-       Save &amp; Send
-      </button>
-      </div>
-    </div>
-  </div>
-</form>
+      </div>  -->
+<!-- </form> -->
+<!-- </div> -->

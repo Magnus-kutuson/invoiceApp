@@ -1,5 +1,5 @@
 import { createFeature, createReducer, on } from "@ngrx/store";
-import { initialInvoiceState } from '../invoice';
+import { initialInvoiceState, FieldProps } from '../invoice';
 import { invoiceActions } from "./actions";
 
 export const invoiceFeature = createFeature({
@@ -11,7 +11,7 @@ export const invoiceFeature = createFeature({
             ...state,
             invoices,
             loading: false,
-            error: null,        
+            error: null,
         })),
         on(invoiceActions.loadFailure, (state, { error }) => ({
             ...state,
@@ -20,8 +20,22 @@ export const invoiceFeature = createFeature({
         })),
         on(invoiceActions.findById, (state, { id }) => ({
             ...state,
-            findById: state.invoices.find((invoice) => invoice.id === id)  
+            findById: state.invoices.find((invoice) => invoice.id === id)
         })),
+        on(invoiceActions.remove, (state, { invoice }) => ({
+            ...state,
+            invoices: state.invoices.filter(
+                (item) => item.id !== invoice.id
+            ),
+        })),
+        on(invoiceActions.fieldProps, (state, { }) => ({
+            ...state, 
+            // FieldProps: state.invoices.
+        })),
+        on(invoiceActions.statuses, (state, { statuses }) => ({
+            ...state,
+            statuses,
+        }))
     )
 })
-export const {selectError, selectLoading, selectInvoices, selectInvoice} = invoiceFeature;
+export const {selectError, selectLoading, selectInvoices, selectInvoice, selectStatuses} = invoiceFeature;
