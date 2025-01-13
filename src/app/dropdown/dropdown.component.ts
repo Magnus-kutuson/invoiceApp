@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Type } from '@angular/core';
 
 @Component({
   selector: 'app-dropdown',
@@ -12,6 +12,7 @@ export class DropdownComponent {
   isOpen = false;
   selectedOption: string = 'Net 30 Days';
   options: string[] = ['Net 1 Day', 'Net 7 Days', 'Net 14 Days', 'Net 30 Days'];
+  static LoginComponent: readonly any[] | Type<any>;
 
   toggleDropdown() {
     this.isOpen = !this.isOpen;

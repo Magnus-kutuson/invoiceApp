@@ -1,1 +1,63 @@
-<p>login works!</p>
+<body>
+    <div class="login-page">
+  <div class="login-left">
+    <div class="logo">
+      <img src="../../assets/images/logo.svg" alt="Logo" />
+    </div>
+    <h2>Welcome Back!</h2>
+    <p>Login to Your Account</p>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-group">
+      <!-- Email Field -->
+      <div class="login-input">
+        <input
+          type="email"
+          placeholder="Email"
+          formControlName="email"
+          [ngClass]="{ 'error-border': loginForm.get('email')?.invalid && loginForm.get('email')?.touched }"
+        />
+        <div>
+          <span
+            *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+            class="error-message"
+          >
+            Email is required.
+          </span>
+        </div>
+      </div>
+
+      <!-- Password Field -->
+      <div class="login-input">
+  <input
+    type="password"
+    placeholder="Password"
+    formControlName="password"
+    [ngClass]="{ 'error-border': loginForm.get('password')?.invalid && loginForm.get('password')?.touched }"
+  />
+  <div>
+    <span
+      *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+      class="error-message"
+    >
+      Password is required.
+    </span>
+  </div>
+</div>
+
+
+      <!-- Submit Button -->
+      <button type="submit" class="login-button" [disabled]="loginForm.invalid">Login</button>
+    </form>
+    <a href="#" class="forgot-password">Forgot password?</a>
+    <div class="social-login">
+      <span>or login with:</span>
+      <div class="social-login icons">
+        <img src="../../assets/images/flat-color-icons_google.svg" alt="Google" />
+        <img src="../../assets/images/cib_apple.svg" alt="Outlook" />
+        <img src="../../assets/images/vscode-icons_file-type-outlook.svg" alt="Apple" />
+      </div>
+    </div>
+  </div>
+
+  <div class="login-right"></div>
+</div>
+</body>
