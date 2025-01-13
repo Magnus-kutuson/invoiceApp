@@ -13,7 +13,7 @@
     <app-badge [status]="invoiceDetails.status">{{invoiceDetails.status}}</app-badge>
   </div>
 <div class="btns">
- <button class="edit">Edit</button>
+ <button class="edit"  (click)="toggleFormVisibility()">Edit</button>
  <button class="delete" (click)="openDialog()">Delete</button>
  <button class="mark">Mark as paid</button>
 </div>
@@ -129,6 +129,14 @@
 </div>
  <router-outlet />
 </div>
+
+<div class="form" *ngIf="isFormVisible">
+        <div class="form-container" #formContainer>
+          <app-forms></app-forms>
+        </div>
+        <app-footer></app-footer>
+  </div>
+
  <div class="delete-card" *ngIf="deleteVisible">
       <app-delete-card (click)="closeDialog()"></app-delete-card>
   </div>

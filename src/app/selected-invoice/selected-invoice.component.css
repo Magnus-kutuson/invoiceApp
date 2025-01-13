@@ -205,6 +205,19 @@ section {
   justify-content: space-between;
   align-items: center;
 }
+.form{
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  left: 6.5rem;
+  background-color: #00000090;
+  backdrop-filter: blur(4px);
+  overflow-y: auto;
+}
+.form-container{
+  background-color: var(--color-almost-white);
+  width: 100%;
+}
 
 .invoice__actions-mod {
   display: flex;

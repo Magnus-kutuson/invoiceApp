@@ -6,8 +6,13 @@
   class="form"
   aria-labelledby="form-heading">
   <div  class="main-title">
-    <app-headline type="H1">New Invoice</app-headline>
+    <app-headline type="H1">
+      <span *ngIf="mode==='new'">New Invoice</span>
+      <span  *ngIf="mode==='edit'"> Edit <span class="hash-symbol">#</span>{{invoiceId}}</span>
+    </app-headline>
   </div>
+  
+ 
 
   <!-- Bill From -->
 <div class="form__section">
@@ -200,7 +205,7 @@
         >Item List</app-headline
       >
     </div>
-
+    <div class="item-list-group">
     <!-- mobile -->
     <div class="mod-mobile">
       <div class="form__group">
@@ -300,7 +305,7 @@
           >156.00</app-headline
         >
         <img src="../../assets/images/delete-icon.svg" alt="">
-      </div>
+     </div>
       
         <!-- <app-textfield
           class="item-list__input-first"
@@ -335,7 +340,10 @@
         <app-headline type="H3" class="item-list__total"
           >400.00</app-headline
         >
-        <img src="../../assets/images/delete-icon.svg" alt="">
-      </div>  -->
+        <img src="../../assets/images/delete-icon.svg" alt="">--> 
+      </div>
+    </div>
+
+   
 <!-- </form> -->
 <!-- </div> -->

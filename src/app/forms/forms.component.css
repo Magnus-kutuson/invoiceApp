@@ -184,6 +184,9 @@ input[type="email"] {
   font-size: 1.5rem;
   font-weight: 700;
 }
+.item-list-group{
+  padding-bottom: 7rem;
+}
 
 .item-list__header-mod,
 .item-list__row-mod {
@@ -195,6 +198,9 @@ input[type="email"] {
 
 .item-list-mod {
   margin-top: 2rem;
+}
+.hash-symbol{
+  color: var(--color-soft-blue);
 }
 
 @media screen and (min-width: 768px) {
