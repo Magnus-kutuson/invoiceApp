@@ -109,7 +109,7 @@ body {
 /* Right Section */
 .login-right {
   flex: 1;
-  background-color: #6a0dad; /* Purple background */
+  background-color: var(--color-primary-blue); /* Purple background */
 }
 
 /* Error Styles */

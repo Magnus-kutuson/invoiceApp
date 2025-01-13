@@ -8,8 +8,7 @@ import { LoginComponent } from './login/login.component';
 export const routes: Routes = [
   { path: '', component: LoginComponent },
   {
-    path: '',
-    component: LayoutComponent,
+    path: '', component: LayoutComponent,
     children: [
       { path: '', redirectTo: 'invoice', pathMatch: 'full' },
       { path: 'invoice', component: InvoiceComponent },
