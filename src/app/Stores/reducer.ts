@@ -12,6 +12,8 @@ export const invoiceFeature = createFeature({
             invoices,
             loading: false,
             error: null,
+            filteredInvoices: invoices,
+            
         })),
         on(invoiceActions.loadFailure, (state, { error }) => ({
             ...state,
@@ -32,10 +34,12 @@ export const invoiceFeature = createFeature({
             ...state, 
             // FieldProps: state.invoices.
         })),
-        on(invoiceActions.statuses, (state, { statuses }) => ({
+        on(invoiceActions.filterInvoices, (state, { statuses }) => ({
             ...state,
-            statuses,
+            filteredInvoices: statuses.length > 0 
+                ? state.invoices.filter((invoice) => statuses.includes(invoice.status))
+                : state.invoices
         }))
     )
 })
-export const {selectError, selectLoading, selectInvoices, selectInvoice, selectStatuses} = invoiceFeature;
+export const {selectError, selectLoading, selectInvoices, selectInvoice, selectFilteredInvoices} = invoiceFeature;

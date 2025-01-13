@@ -4,11 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HeadlineComponent } from '../headline/headline.component';
 import { Store } from '@ngrx/store';
 import { invoiceActions } from '../Stores/actions';
-import { selectStatuses } from '../Stores/reducer';
 import { Observable } from 'rxjs';
-
-
-
 
 
 
@@ -21,19 +17,17 @@ import { Observable } from 'rxjs';
 })
 export class FilterComponent implements OnInit {
   dropdownOpen = false;
-  statuses$: Observable<any[]> = this.store.select(selectStatuses);
- 
+  statuses$: Observable<any[]> = new Observable();
+
   constructor(private store: Store) {}
 
   ngOnInit(): void {
-    // this.statuses$ = this.store.select(selectStatuses);
-
-    this.statuses$.subscribe((statuses) => {
-      this.store.dispatch(invoiceActions.statuses({ statuses }));
-    })
+   
   }
 
   items = [{ status: 'paid' }, { status: 'pending' }, { status: 'draft' }];
+
+  statuses = { paid: false, pending: false, draft: false };
 
   filters = [
     { id: '1', title: 'Paid', value: 'paid', selected: false },
@@ -41,24 +35,45 @@ export class FilterComponent implements OnInit {
     { id: '3', title: 'Draft', value: 'draft', selected: false },
   ];
   // invoices: any;
+  selectedStatus() {
+    const selectedFilters = [];
+    if (this.statuses.paid) {
+      selectedFilters.push('paid');
+    }
+    if (this.statuses.pending) {
+      selectedFilters.push('pending');
+    }
+    if (this.statuses.draft) {
+      selectedFilters.push('draft');
+    }
+    return selectedFilters;
+  }
+
+  applyFilters() {
+    this.store.dispatch(
+      invoiceActions.filterInvoices({
+        statuses: this.selectedStatus(),
+      })
+    )
+  }
 
   toggleDropdown() {
     this.dropdownOpen = !this.dropdownOpen;
   }
 
-  getSelectedFilters() {
-    return this.filters
-      .filter((filter) => filter.selected)
-      .map((filter) => filter.value);
-  }
+  // getSelectedFilters() {
+  //   return this.filters
+  //     .filter((filter) => filter.selected)
+  //     .map((filter) => filter.value);
+  // }
 
-  get filteredItems() {
-    const activeFilters = this.getSelectedFilters();
+//   get filteredItems() {
+//     const activeFilters = this.getSelectedFilters();
 
-    if (activeFilters.length === 0) {
-      return this.items;
-    }
+//     if (activeFilters.length === 0) {
+//       return this.items;
+//     }
 
-    return this.items.filter((item) => activeFilters.includes(item.status));
-  }
+//     return this.items.filter((item) => activeFilters.includes(item.status));
+//   }
 }

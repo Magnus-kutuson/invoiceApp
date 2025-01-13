@@ -8,7 +8,7 @@ import { HeadlineComponent } from '../headline/headline.component';
 import { TextComponent } from '../text/text.component';
 import { Store } from '@ngrx/store';
 import { invoiceActions } from '../Stores/actions';
-import { selectError, selectInvoices, selectLoading, selectStatuses } from '../Stores/reducer';
+import { selectError, selectFilteredInvoices, selectInvoices, selectLoading  } from '../Stores/reducer';
 import { ThemeChangerComponent } from '../theme-changer/theme-changer.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { FormsComponent } from '../forms/forms.component';
@@ -38,7 +38,7 @@ import { DeleteCardComponent } from '../delete-card/delete-card.component';
   styleUrls: ['./invoice.component.css'],
 })
 export class InvoiceComponent implements OnInit {
-  data: any = this.store.selectSignal(selectInvoices);
+  data = this.store.selectSignal(selectFilteredInvoices);
   loadingInvoice: any = this.store.selectSignal(selectLoading);
   error: Signal<string | null> = this.store.selectSignal(selectError);
   isDarkMode: boolean = false;

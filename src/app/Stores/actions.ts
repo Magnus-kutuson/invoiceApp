@@ -15,7 +15,7 @@ export const invoiceActions = createActionGroup({
     findById: props<{ id: string }>(),
     clear: emptyProps(),
     FieldProps: props<{ fieldProps: FieldProps }>(),
-    statuses: props<{ statuses: BadgeVariants[]}>()
+    filterInvoices: props<{ statuses: string[]}>()
   },
 });
 

@@ -22,7 +22,7 @@ label {
   border-radius: 4px;
   padding: 10px 15px;
   cursor: pointer;
-  color: #1e2139;
+  color: var(--color-very-dark);
   font-weight: 500;
   width: 100%;
   height: 48px;
@@ -51,17 +51,17 @@ label {
 .dropdown-list li {
   padding: 10px 15px;
   cursor: pointer;
-  color: #1e2139;
+  color: var(--color-very-dark);  
   font-weight: 500;
   transition: background 0.2s;
 }
 
 .dropdown-list li:hover {
-  background: #f4f4f4;
+  background: var(--color-white);
 }
 
 .dropdown-list li.selected {
-  color: #7c5dfa;
+  color: var(--color-primary-blue);
 }
 
 /* Highlight selected option */

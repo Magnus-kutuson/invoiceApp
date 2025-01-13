@@ -7,7 +7,7 @@
 .date-picker-label {
   font-size: 14px;
   font-weight: bold;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .date-picker-input {
@@ -31,7 +31,7 @@ input{
 
 }
 .date-picker-input.active {
-  border-color: #7c5dfa;
+  border-color: var(--color-primary-blue);
 }
 
 .date-picker-popup {
@@ -75,13 +75,13 @@ input{
 }
 
 .date-picker-grid button:hover {
-  background: #7c5dfa;
-  color: #fff;
+  background: var(--color-primary-blue);
+  color: var(--color-white);
 }
 
 .date-picker-grid button.selected {
-  background: #7c5dfa;
-  color: #fff;
+  background: var(--color-primary-blue);
+  color: var(--color-white);
 }
 
 .date-picker-grid button.disabled {

@@ -5,12 +5,28 @@
         <img src="../../assets/images/Path 2.svg" alt="">
       </span>
     </button>
-    <div class="dropdown-content" *ngIf="dropdownOpen">
-      <div *ngFor="let filter of filters">
+    <form class="dropdown-content" *ngIf="dropdownOpen" (change)="applyFilters()">
+      <div>
         <label>
-          <input type="checkbox" [(ngModel)]="filter.selected" />
-          {{ filter.title }}
+          <input type="checkbox" [(ngModel)]="statuses.paid" 
+          name="paid"
+          [checked]="statuses.paid"/>
+          paid
         </label>
+      <div >
+        <label>
+          <input type="checkbox" [(ngModel)]="statuses.pending"
+          name="pending"
+          [checked]="statuses.pending"/>
+        pending
+        </label>
+      <div >
+        <label>
+          <input type="checkbox" [(ngModel)]="statuses.draft" 
+          name="draft" 
+          [checked]="statuses.draft"/>
+         draft
+           </label>
       </div>
-    </div>
+    <!-- </form> -->
   </div>
