@@ -10,7 +10,7 @@ export const routes: Routes = [
   {
     path: '', component: LayoutComponent,
     children: [
-      { path: '', redirectTo: 'invoice', pathMatch: 'full' },
+      { path: '', redirectTo: '/invoice', pathMatch: 'full' },
       { path: 'invoice', component: InvoiceComponent },
       { path: 'invoice/:id', component: SelectedInvoiceComponent },
     ],
