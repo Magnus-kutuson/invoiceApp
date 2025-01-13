@@ -135,7 +135,9 @@ section {
 .invoice {
   margin-block: 3.2rem 2rem;
 }
-
+.id{
+  color: var(--color-very-dark);
+}
 .invoice-summary {
   box-shadow: none;
 }
@@ -195,6 +197,7 @@ section {
 
 .invoice-table__amount {
   justify-self: end;
+  color: var(--color-very-dark);
 }
 
 .invoice-table__item-2-display {

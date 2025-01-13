@@ -21,7 +21,7 @@
 <div class="selected_invoice_container">
   <div class="container-content">
   <div class="rightSide-container">
-  <app-headline type="H3"><span>#</span>{{invoiceDetails.id}}</app-headline>
+  <app-headline type="H3" class="id"><span>#</span>{{invoiceDetails.id}}</app-headline>
   <app-text type="Body1" class="description">{{invoiceDetails.description}}</app-text>
  </div>
 <div class="leftSide-container">
@@ -37,48 +37,48 @@
     <div class="invoice-summary__content">
       <div class="invoice-summary__group">
         <div class="invoice-summary__item">
-          <app-text type="Body1" class="invoice-summary__label" 
+          <app-text type="Body1" class="id" 
             >Invoice Date</app-text
           >
-          <app-headline type="H3" class="invoice-summary__value">{{
+          <app-headline type="H3" class="id">{{
             invoiceDetails.createdAt
           }}</app-headline>
         </div>
         <div class="invoice-summary__item">
-          <app-text type="Body1" class="invoice-summary__label" 
+          <app-text type="Body1" class="id" 
             >Payment Due</app-text
           >
-          <app-headline type="H3" class="invoice-summary__value">{{
+          <app-headline type="H3" class="id">{{
             invoiceDetails.paymentDue
           }}</app-headline>
         </div>
       </div>
       <div class="invoice-summary__group">
         <div class="invoice-summary__item">
-          <app-text class="invoice-summary__label" type="Body1"
+          <app-text class="id" type="Body1"
             >Bill To</app-text
           >
-          <app-headline type="H3">{{ invoiceDetails.clientName }}</app-headline>
-          <app-text class="invoice-summary__address-line" type="Body1">{{
+          <app-headline type="H3" class="id">{{ invoiceDetails.clientName }}</app-headline>
+          <app-text class="id" type="Body1">{{
             invoiceDetails.clientAddress.street
           }}</app-text>
-          <app-text class="invoice-summary__address-line" type="Body1">{{
+          <app-text class="id" type="Body1">{{
             invoiceDetails.clientAddress.city
           }}</app-text>
-          <app-text class="invoice-summary__address-line" type="Body1">{{
+          <app-text class="id" type="Body1">{{
             invoiceDetails.clientAddress.postCode
           }}</app-text>
-          <app-text class="invoice-summary__address-line" type="Body1">{{
+          <app-text class="id" type="Body1">{{
             invoiceDetails.clientAddress.country
           }}</app-text>
         </div>
       </div>
       <div class="invoice-summary__group">
         <div class="invoice-summary__item">
-          <app-text class="invoice-summary__label" type="Body1"
+          <app-text class="id" type="Body1"
             >Sent to</app-text
           >
-          <app-headline type="H3">{{ invoiceDetails.clientEmail }}</app-headline>
+          <app-headline type="H3" class="id">{{ invoiceDetails.clientEmail }}</app-headline>
         </div>
       </div>
     </div>
