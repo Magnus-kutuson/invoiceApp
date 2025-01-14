@@ -25,6 +25,11 @@
 --color-almost-white: #252945;
 --color-white: #1E2139;
 --color-very-dark: #F8F8FB;
+--color-light-gray: #373B53;
+--color-steel-gray: #141625;
+--color-muted-blue: #888EB0;
+--color-soft-blue: #7E88C3;
+--color-default: #ccc;
 }
 
 *{

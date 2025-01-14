@@ -10,6 +10,7 @@ import { selectInvoices } from '../Stores/reducer';
 import { Store } from '@ngrx/store';
 import { DataService } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
+import { Invoice } from '../invoice';
 
 
 
@@ -35,8 +36,9 @@ export class FormsComponent implements OnInit {
   private readonly fb = inject(FormBuilder);
   invoices$: any = this.store.select(selectInvoices);
   invoiceDetails: any;
-  mode: 'new' | 'edit' = 'new'; // Track the mode
-  invoiceId: string | null = null; // Track the invoice ID
+  mode: 'new' | 'edit' = 'new';
+  invoiceId: string | null = null;
+  items: any;
 
   constructor(private store: Store, private dataService: DataService) {}
 
@@ -89,40 +91,56 @@ export class FormsComponent implements OnInit {
     clientCity: ['', [Validators.required, Validators.min(2)]],
     clientPostCode: ['', [Validators.required, Validators.min(2)]],
     clientCountry: ['', [Validators.required, Validators.min(2)]],
-
-    itemName: ['', [Validators.required, Validators.min(2)]],
-    itemQuantity: [1, [Validators.required, Validators.min(1)]],
-    itemPrice: [1, [Validators.required, Validators.min(1)]],
-    itemTotal: [1],
-
+    items: this.fb.array([this.createItem()]),
     total: [0],
   });
 
-  populateForm(invoice: any): void {
+  createItem() {
+    return this.fb.group({
+      name: ['', [Validators.required, Validators.min(2)]],
+      quantity: ['', [Validators.required, Validators.min(1)]],
+      price: ['', [Validators.required, Validators.min(1)]],
+      total: [0],
+    });
+  }
+  
+  populateForm(invoice: Invoice): void {
     this.invoiceForm.patchValue({
       createdAt: invoice.createdAt,
       description: invoice.description,
-      paymentTerms: invoice.paymentTerms,
+      paymentTerms: invoice.paymentTerms.toString(),
       clientName: invoice.clientName,
       clientEmail: invoice.clientEmail,
       status: invoice.status,
 
-      senderStreet: invoice.senderStreet,
-      senderCity: invoice.senderCity,
-      senderPostCode: invoice.senderPostCode,
-      senderCountry: invoice.senderCountry,
+      senderStreet: invoice.senderAddress.street,
+      senderCity: invoice.senderAddress.city,
+      senderPostCode: invoice.senderAddress.postCode,
+      senderCountry: invoice.senderAddress.country,
 
-      clientStreet: invoice.clientStreet,
-      clientCity: invoice.clientCity,
-      clientPostCode: invoice.clientPostCode,
-      clientCountry: invoice.clientCountry,
+      clientStreet: invoice.clientAddress.street,
+      clientCity: invoice.clientAddress.city,
+      clientPostCode: invoice.clientAddress.postCode,
+      clientCountry: invoice.clientAddress.country,
 
-      itemName: invoice.itemName,
-      itemQuantity: invoice.itemQuantity,
-      itemPrice: invoice.itemPrice,
-      itemTotal: invoice.itemTotal,
+      // itemName: invoice.items.name,
+      // itemQuantity: invoice.itemQuantity,
+      // itemPrice: invoice.itemPrice,
+      // itemTotal: invoice.itemTotal,
 
       total: invoice.total,
+    });
+
+    this.items.clear();
+    invoice.items.forEach((item: any) => {
+      this.items.push(
+        this.fb.group({
+          name: item.name,
+          quantity: item.quantity,
+          price: item.price,
+          total: item.total,
+        })
+      );
     });
   }
 
