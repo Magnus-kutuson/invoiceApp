@@ -9,8 +9,17 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideEffects } from '@ngrx/effects';
 import { InvoiceEffects } from './Stores/effects';
 import { provideToastr } from 'ngx-toastr';
-import{ provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideHttpClient(), provideStore(), provideState(invoiceFeature), provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }), provideEffects(InvoiceEffects), provideAnimationsAsync(), provideToastr()],
+  providers: [
+    provideRouter(routes),
+    provideHttpClient(),
+    provideStore(),
+    provideState(invoiceFeature),
+    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
+    provideEffects(InvoiceEffects),
+    provideAnimationsAsync(),
+    provideToastr({ positionClass: 'toast-top-center' }),
+  ],
 };
