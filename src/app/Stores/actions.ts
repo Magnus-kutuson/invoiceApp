@@ -15,7 +15,12 @@ export const invoiceActions = createActionGroup({
     findById: props<{ id: string }>(),
     clear: emptyProps(),
     FieldProps: props<{ fieldProps: FieldProps }>(),
-    filterInvoices: props<{ statuses: string[]}>()
+    filterInvoices: props<{ statuses: string[] }>(),
+    Notification: props<{
+      message: string,
+      notificationType: 'success' | 'error' | 'info' | 'warning',
+      duration?: number;
+    }>(),
   },
 });
 

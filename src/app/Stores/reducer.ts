@@ -39,7 +39,7 @@ export const invoiceFeature = createFeature({
             filteredInvoices: statuses.length > 0 
                 ? state.invoices.filter((invoice) => statuses.includes(invoice.status))
                 : state.invoices
-        }))
-    )
-})
+        })),
+    ),
+});
 export const {selectError, selectLoading, selectInvoices, selectInvoice, selectFilteredInvoices} = invoiceFeature;

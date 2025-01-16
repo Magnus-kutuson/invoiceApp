@@ -1,18 +1,25 @@
-import { Component,inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { HeadlineComponent } from '../headline/headline.component';
 import { TextComponent } from '../text/text.component';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormControl, FormGroup, NgModel, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  NgModel,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { DatePickerComponent } from '../date-picker/date-picker.component';
 import { TextfieldComponent } from '../textfield/textfield.component';
 import { DropdownComponent } from '../dropdown/dropdown.component';
-import { selectInvoices } from '../Stores/reducer';
+import { selectInvoices} from '../Stores/reducer';
 import { Store } from '@ngrx/store';
 import { DataService } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Invoice } from '../invoice';
-
-
+import { invoiceActions } from '../Stores/actions';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-forms',
@@ -40,9 +47,11 @@ export class FormsComponent implements OnInit {
   invoiceId: string | null = null;
   items: any;
 
-  constructor(private store: Store, private dataService: DataService) {}
+  constructor(
+    private store: Store,
+    private dataService: DataService,
+  ) {}
 
-  // Get field error state to style input border
   isFieldError(field: string): boolean {
     const control = this.invoiceForm.get(field);
     return ((control?.invalid && control?.touched) ||
@@ -51,6 +60,8 @@ export class FormsComponent implements OnInit {
   routes: ActivatedRoute = inject(ActivatedRoute);
 
   ngOnInit(): void {
+    this.store.dispatch(invoiceActions.load()); 
+    
     this.invoiceId = this.routes.snapshot.paramMap.get('id');
     if (this.invoiceId) {
       this.mode = 'edit';
@@ -103,7 +114,7 @@ export class FormsComponent implements OnInit {
       total: [0],
     });
   }
-  
+
   populateForm(invoice: Invoice): void {
     this.invoiceForm.patchValue({
       createdAt: invoice.createdAt,

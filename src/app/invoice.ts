@@ -38,13 +38,14 @@ export type FieldProps = {
 export type BadgeVariants = string[];
 
 
+
 export interface InvoiceState {
   invoices: Invoice[];
   loading: boolean;
   error: string | null;
   invoice: Invoice | undefined;
   findById: Invoice | undefined;
-  filteredInvoices: Invoice [];
+  filteredInvoices: Invoice[];
   fieldprops: [];
 }
 

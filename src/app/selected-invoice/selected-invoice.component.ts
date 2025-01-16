@@ -46,11 +46,10 @@ export class SelectedInvoiceComponent implements OnInit {
 
   routes: ActivatedRoute = inject(ActivatedRoute);
 
-  constructor(private store: Store, private dataService: DataService) {}
+  constructor(private store: Store,
+    private dataService: DataService) { }
 
   ngOnInit(): void {
-    // this.store.dispatch(invoiceActions.findById({ id: this.routes.snapshot.params['id'] }));
-    // this.store.dispatch(invoiceActions.load());
     const invoiceId = this.routes.snapshot.paramMap.get('id');
     this.invoices$.subscribe((invoices: any) => {
       this.invoiceDetails = invoices.find(
