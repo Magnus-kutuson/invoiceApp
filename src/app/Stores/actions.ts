@@ -16,11 +16,6 @@ export const invoiceActions = createActionGroup({
     clear: emptyProps(),
     FieldProps: props<{ fieldProps: FieldProps }>(),
     filterInvoices: props<{ statuses: string[] }>(),
-    Notification: props<{
-      message: string,
-      notificationType: 'success' | 'error' | 'info' | 'warning',
-      duration?: number;
-    }>(),
   },
 });
 
