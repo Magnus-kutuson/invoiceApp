@@ -19,7 +19,7 @@ import { DataService } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Invoice } from '../invoice';
 import { invoiceActions } from '../Stores/actions';
-import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-forms',
@@ -47,10 +47,7 @@ export class FormsComponent implements OnInit {
   invoiceId: string | null = null;
   items: any;
 
-  constructor(
-    private store: Store,
-    private dataService: DataService,
-  ) {}
+  constructor(private store: Store, private dataService: DataService) {}
 
   isFieldError(field: string): boolean {
     const control = this.invoiceForm.get(field);
@@ -60,8 +57,8 @@ export class FormsComponent implements OnInit {
   routes: ActivatedRoute = inject(ActivatedRoute);
 
   ngOnInit(): void {
-    this.store.dispatch(invoiceActions.load()); 
-    
+    this.store.dispatch(invoiceActions.load());
+
     this.invoiceId = this.routes.snapshot.paramMap.get('id');
     if (this.invoiceId) {
       this.mode = 'edit';
@@ -75,6 +72,10 @@ export class FormsComponent implements OnInit {
       });
     } else {
       this.mode = 'new';
+    }
+
+    if (this.invoiceDetails) {
+      this.invoiceDetails(this.invoiceDetails);
     }
   }
   getHeader(): string {
@@ -115,6 +116,10 @@ export class FormsComponent implements OnInit {
     });
   }
 
+  addNewItem() {
+    this.items.push(this.createItem());
+  }
+  
   populateForm(invoice: Invoice): void {
     this.invoiceForm.patchValue({
       createdAt: invoice.createdAt,

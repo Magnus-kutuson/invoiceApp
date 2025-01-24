@@ -1,4 +1,4 @@
-import { Component,  OnInit, Signal, HostListener, ElementRef } from '@angular/core';
+import { Component,  OnInit, Signal, ElementRef } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from '../data.service';
 import { CommonModule } from '@angular/common';
@@ -56,16 +56,5 @@ export class InvoiceComponent implements OnInit {
     this.dataService.formVisible$.subscribe((visible) => {
       this.isFormVisible = visible;
     });
-  }
-  @HostListener('document:click', ['$event'])
-  onDocumentClick(event: MouseEvent): void {
-    if (!this.isFormVisible) return; 
-
-    const targetElement = event.target as HTMLElement;
-    const clickedInside = this.elementRef.nativeElement.contains(targetElement);
-
-    if (!clickedInside) {
-      this.isFormVisible = false; 
-    }
   }
 }

@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class DataService {
   private jsonURL = '../../../assets/data.json';
-  private formVisibleSource = new BehaviorSubject<any>(null);
+  private formVisibleSource = new BehaviorSubject<boolean>(false);
   formVisible$ = this.formVisibleSource.asObservable();
  
 
@@ -20,6 +20,7 @@ export class DataService {
 
   toggleFormVisibility(): void {
     this.formVisibleSource.next(!this.formVisibleSource.value);
+    console.log(this.formVisibleSource);
   }
 
 }
