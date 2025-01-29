@@ -4,7 +4,7 @@
     <div class="invoice-card" *ngFor="let dataList of data()">
       <a [routerLink]="dataList.id" >
         <div class="card-content" >
-        <p class="id"><span>#</span>{{ dataList.id }}</p>
+        <h3 class="id"><span>#</span>{{ dataList.id }}</h3>
         <p class="due">{{ dataList.paymentDue }}</p>
         <p class="name">{{ dataList.clientName }}</p>
         <p class="amount">£{{ dataList.total }}</p>

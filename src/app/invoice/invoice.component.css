@@ -8,9 +8,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1rem;
+    margin: 1rem auto;
     cursor: pointer;
-    margin-left: 7rem;
+   
 }
 .header{
   display: flex;
