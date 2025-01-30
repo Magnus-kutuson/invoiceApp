@@ -3,9 +3,9 @@ import { HeadlineComponent } from '../headline/headline.component';
 import { TextComponent } from '../text/text.component';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
-import { selectInvoices } from '../Stores/reducer';
+import { selectInvoices } from '../../Stores/reducer';
 import { ActivatedRoute } from '@angular/router';
-import { DataService } from '../data.service';
+import { DataService } from '../../service/data.service';
 
 @Component({
   selector: 'app-delete-card',

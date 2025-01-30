@@ -1,0 +1,34 @@
+/* H1 Style */
+.headline-H1 {
+    font-family: 'Spartan', sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: -1px;
+  }
+  
+  /* H2 Style */
+  .headline-H2 {
+    font-family: 'Spartan', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: -0.63px;
+  }
+  
+  .headline-H3 {
+    font-family: 'Spartan', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.8px;
+  }
+  
+  .headline-H4 {
+    font-family: 'Spartan', sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+  }
+  

@@ -1,0 +1,50 @@
+.header-content{
+    display: flex;
+    width: 730px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8rem auto;
+}
+.invoice-btn{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 150px;
+    height: 48px;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--color-primary-blue);
+    color: #fff;
+}
+.invoice-btn:hover{
+    background-color: var(--color-secondary-blue);
+    cursor: pointer;
+}
+.sub-header{
+    /* width: 100%; */
+    /* border: 3px solid red; */
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+.invoice-header{
+    color: var(--color-very-dark);
+}
+
+@media (max-width:640px) {
+    .header-content{
+        margin-top: 2rem;
+        width: 327px;
+        height: 100%;
+    }
+    
+}
+/* @media (max-width:1023px) {
+    .header-content{
+        margin-top: 2rem;
+        width: 672px;
+        height: 100%;
+       margin-left: 5rem;
+    }
+    
+} */

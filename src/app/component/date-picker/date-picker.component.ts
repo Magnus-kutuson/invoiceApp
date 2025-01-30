@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FieldProps } from '../invoice';
-
+import { FieldProps } from '../../interface/invoice';
 
 @Component({
   selector: 'app-date-picker',
