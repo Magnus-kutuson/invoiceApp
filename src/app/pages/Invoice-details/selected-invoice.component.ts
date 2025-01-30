@@ -1,23 +1,22 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { TextComponent } from '../text/text.component';
-import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
-import { HeadlineComponent } from '../headline/headline.component';
+import { TextComponent } from '../../component/text/text.component';
+import {
+  RouterLink,
+  RouterLinkActive,
+  RouterModule,
+  RouterOutlet,
+} from '@angular/router';
+import { HeadlineComponent } from '../../component/headline/headline.component';
 import { Store } from '@ngrx/store';
-import { invoiceActions } from '../Stores/actions';
-import {  selectInvoice,selectInvoices } from '../Stores/reducer';
+import { invoiceActions } from '../../Stores/actions';
+import { selectInvoice, selectInvoices } from '../../Stores/reducer';
 import { ActivatedRoute } from '@angular/router';
-import { BadgeComponent } from '../badge/badge.component';
-import { DeleteCardComponent } from '../delete-card/delete-card.component';
-import { DataService } from '../data.service';
+import { BadgeComponent } from '../../component/badge/badge.component';
+import { DeleteCardComponent } from '../../component/delete-card/delete-card.component';
+import { DataService } from '../../service/data.service';
 import { CommonModule } from '@angular/common';
-import { FooterComponent } from '../footer/footer.component';
-import { FormsComponent } from '../forms/forms.component';
-
-
-
-
-
-
+import { FooterComponent } from '../../component/footer/footer.component';
+import { FormsComponent } from '../../component/forms/forms.component';
 
 @Component({
   selector: 'app-selected-invoice',
@@ -46,8 +45,7 @@ export class SelectedInvoiceComponent implements OnInit {
 
   routes: ActivatedRoute = inject(ActivatedRoute);
 
-  constructor(private store: Store,
-    private dataService: DataService) { }
+  constructor(private store: Store, private dataService: DataService) {}
 
   ngOnInit(): void {
     const invoiceId = this.routes.snapshot.paramMap.get('id');

@@ -1,21 +1,24 @@
-import { Component,  OnInit, Signal, ElementRef } from '@angular/core';
+import { Component, OnInit, Signal, ElementRef } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { DataService } from '../data.service';
+import { DataService } from '../../service/data.service';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from '../header/header.component';
-import { BadgeComponent } from '../badge/badge.component';
-import { HeadlineComponent } from '../headline/headline.component';
-import { TextComponent } from '../text/text.component';
+import { HeaderComponent } from '../../component/header/header.component';
+import { BadgeComponent } from '../../component/badge/badge.component';
+import { HeadlineComponent } from '../../component/headline/headline.component';
+import { TextComponent } from '../../component/text/text.component';
 import { Store } from '@ngrx/store';
-import { invoiceActions } from '../Stores/actions';
-import { selectError, selectFilteredInvoices, selectInvoices, selectLoading  } from '../Stores/reducer';
-import { ThemeChangerComponent } from '../theme-changer/theme-changer.component';
+import { invoiceActions } from '../../Stores/actions';
+import {
+  selectError,
+  selectFilteredInvoices,
+  selectInvoices,
+  selectLoading,
+} from '../../Stores/reducer';
+import { ThemeChangerComponent } from '../../component/theme-changer/theme-changer.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { FormsComponent } from '../forms/forms.component';
-import { FooterComponent } from '../footer/footer.component';
-import { DeleteCardComponent } from '../delete-card/delete-card.component';
-
-
+import { FormsComponent } from '../../component/forms/forms.component';
+import { FooterComponent } from '../../component/footer/footer.component';
+import { DeleteCardComponent } from '../../component/delete-card/delete-card.component';
 
 @Component({
   selector: 'app-invoice',
@@ -32,7 +35,7 @@ import { DeleteCardComponent } from '../delete-card/delete-card.component';
     RouterLinkActive,
     FormsComponent,
     FooterComponent,
-    DeleteCardComponent
+    DeleteCardComponent,
   ],
   templateUrl: './invoice.component.html',
   styleUrls: ['./invoice.component.css'],

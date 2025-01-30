@@ -89,6 +89,9 @@ a{
   .form{
       left: 0;
   }
+  .invoice-card{
+    width: 100%;
+  }
 .form-container{
   width: 80%;
 }

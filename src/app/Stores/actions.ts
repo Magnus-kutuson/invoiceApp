@@ -1,7 +1,5 @@
-import { createActionGroup, emptyProps, props } from "@ngrx/store";
-import { Invoice, FieldProps, BadgeVariants } from '../invoice';
-
-
+import { createActionGroup, emptyProps, props } from '@ngrx/store';
+import { Invoice, FieldProps, BadgeVariants } from '../interface/invoice';
 
 export const invoiceActions = createActionGroup({
   source: 'Invoice',
@@ -18,4 +16,3 @@ export const invoiceActions = createActionGroup({
     filterInvoices: props<{ statuses: string[] }>(),
   },
 });
-
