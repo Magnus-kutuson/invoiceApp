@@ -41,7 +41,14 @@
     background-color: var(--color-primary-blue);
     color: #fff;
 }
-/* .btn-content button:hover{
-    background-color: var(--color-secondary-blue);
-    cursor: pointer;
-} */
+@media screen and (max-width: 768px) {
+    .footer{
+        width: 100%;
+    }
+    
+}
+@media screen and (max-width: 996px) {
+    .footer{
+        width: 80%;
+    }
+}

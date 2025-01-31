@@ -27,6 +27,7 @@ a{
 .form{
   position: fixed;
   inset: 0;
+  top: 100px;
   width: 100%;
   left: 6.5rem;
   background-color: #00000090;

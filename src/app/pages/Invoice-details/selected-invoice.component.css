@@ -8,9 +8,9 @@
   /* border: 1px solid var(--color-primary-blue); */
  
 }
-.selected_invoice{
+/* .selected_invoice{
   margin-left: 5rem;
-}
+} */
 .selected_invoice_header{
   width: 730px;
   height: 88px;
@@ -59,6 +59,7 @@ a{
     margin-top: 2rem;
     box-shadow: 0px 0px 4px 4px #48549F1A;
     border-radius: 8px;
+    padding: 2rem;
    
 }
 .container-content{
@@ -113,9 +114,7 @@ a{
   color: var(--color-muted-blue);
 }
 
-.selected_invoice_container{
-  padding: 2rem;
-}
+
 
 span{
   color: var(--color-muted-blue);
@@ -222,6 +221,7 @@ section {
   width: 100%;
 }
 
+
 .invoice__actions-mod {
   display: flex;
   justify-content: space-between;
@@ -248,7 +248,9 @@ section {
   .invoice__actions {
     display: inline-flex;
   }
-
+.form{
+   top: 100px;
+}
   .invoices {
     margin-bottom: auto;
   }
