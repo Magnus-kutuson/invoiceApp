@@ -85,6 +85,13 @@ a{
 .invoice-card:hover{
     border: 2px solid var(--color-primary-blue);
 }
+
+@media (max-width: 640px) {
+  .invoice-card{
+    width: 327px;
+    height: 134px;
+  }
+}
 @media (max-width: 1023px) {
   .form{
       top: 100px;
