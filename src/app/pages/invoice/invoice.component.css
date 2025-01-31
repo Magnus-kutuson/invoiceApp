@@ -27,7 +27,6 @@ a{
 .form{
   position: fixed;
   inset: 0;
-  top: 100px;
   width: 100%;
   left: 6.5rem;
   background-color: #00000090;
@@ -88,6 +87,7 @@ a{
 }
 @media (max-width: 1023px) {
   .form{
+      top: 100px;
       left: 0;
   }
   .invoice-card{
