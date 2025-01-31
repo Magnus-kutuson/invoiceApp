@@ -15,15 +15,17 @@
         display: flex; 
         justify-content: space-between; 
      }
- /* app-header,app-invoice {
-       display: block;
-       width: 100%;
-       margin: 0;   
-       padding: 0; 
-     } */
-     
 
-    
+    .line {
+  width: 2px; /* Vertical */
+  height: 100px;
+  display: block;
+  margin: auto;
+}
+
+
+
+
 
 @media(min-width: 1023px){
     .sidebar {
@@ -48,7 +50,10 @@
         align-items: center; 
         height: 100%; 
      }
-    
+      .line {
+    width: 100px; /* Horizontal */
+    height: 2px;
+  }
      .sidebar-content{
         display: flex;
         flex-direction: column;

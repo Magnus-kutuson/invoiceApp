@@ -235,6 +235,14 @@ section {
   right: 0;
   width: 100%;
 }
+@media screen and (max-width: 1023px) {
+.selected_invoice_header,
+.selected_invoice_container {
+  width: 688px;
+  text-align: center;
+  margin: 1rem auto;
+}
+}
 
 @media screen and (max-width: 768px) {
   .invoice__actions {

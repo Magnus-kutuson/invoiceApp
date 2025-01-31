@@ -214,6 +214,7 @@ input[type="email"] {
 @media screen and (min-width: 768px) {
   .form {
     backdrop-filter: blur(2px);
+    width: 70%;
   }
   .mod-mobile {
     display: none;
@@ -238,6 +239,11 @@ input[type="email"] {
   }
 }
 @media screen and (min-width: 992px) {
+  .form {
+    backdrop-filter: none;
+    width: 70%;
+  }
+ 
   .form__container {
     left: 10rem;
     max-width: 50%;
