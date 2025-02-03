@@ -11,6 +11,19 @@
         <app-badge [status]="dataList.status">{{ dataList.status }}</app-badge>
           <img src="../../assets/images/arrow-right.svg" alt="arrow-right">
       </div> 
+      <div class="inner">
+        <div class="inner-content1">
+          <h3 class="id"><span>#</span>{{ dataList.id }}</h3>
+          <p class="name">{{ dataList.clientName }}</p>
+        </div>
+        <div class="inner-content2">
+          <div>
+          <p class="due">{{ dataList.paymentDue }}</p>
+          <p class="amount">£{{ dataList.total }}</p>
+          </div>
+        <app-badge [status]="dataList.status">{{ dataList.status }}</app-badge>
+        </div>
+      </div>
       </a>
     </div>
   </ng-container>

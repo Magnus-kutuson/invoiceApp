@@ -12,6 +12,9 @@
     cursor: pointer;
    
 }
+.inner{
+  display: none;
+}
 .header{
   display: flex;
   flex-direction: column;
@@ -91,7 +94,29 @@ a{
     height: 134px;
   }
   .card-content{
-   display: flex;
+   display: none;
+  }
+  .inner{
+    display: block;
+    padding: 20px;
+  }
+  .inner-content1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  p{
+    margin-bottom: 1rem;
+  }
+  .inner-content2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .form{
+    top: 100px;
+    left: 0;
   }
 }
 @media (max-width: 1023px) and (min-width: 640px) {
