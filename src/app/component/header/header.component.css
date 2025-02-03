@@ -16,6 +16,9 @@
     background-color: var(--color-primary-blue);
     color: #fff;
 }
+.search-btn{
+    display: none;
+}
 .invoice-btn:hover{
     background-color: var(--color-secondary-blue);
     cursor: pointer;
@@ -31,15 +34,32 @@
     color: var(--color-very-dark);
 }
 
-@media (max-width:640px) {
+@media (max-width:640px) and (min-width:320px) {
     .header-content{
         width: 327px;
         margin-top: 2rem;
-        border: 1px solid red;
+        /* border: 1px solid red; */
     }
-    
+    .invoice-btn{
+        display: none;
+    }
+    .search-btn{
+     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--color-primary-blue);
+    color: #fff;
+    }
+    .sub-header{
+        display: flex;
+        align-items: center;
+    }
 }
-@media (max-width:1023px) {
+@media (max-width:1023px) and (min-width:640px) {
     .header-content{
         margin-top: 2rem;
         width: 672px;
